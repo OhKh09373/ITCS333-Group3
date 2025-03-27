@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    background-color: #F7F7F7;
+    font-family:  sans-serif, Helvetica;
+}
+header{
+    padding: 35px ;
+    background-color: #457dbc;
+}
+
+.logo{
+    float: left;
+    margin-top: -50px;
+    margin-left: 55px ;
+    height: 170px;
+    border-radius: 50%;
+}
+nav{
+    background-color:#EBEBEB;
+    padding: 1px;
+    margin-left: 140px;
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    margin: 10px;
+}
+
+li{
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    display: inline;
+    padding: 0 20px;
+
+}
+li:hover{
+    color: white;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+
+
