@@ -1,48 +1,117 @@
-body{
+body {
     margin: 0;
     background-color: #F7F7F7;
-    font-family:  sans-serif, Helvetica;
-}
-header{
-    padding: 35px ;
+    font-family: sans-serif, Helvetica;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    }
+header {
     background-color: #457dbc;
+    height: 60px;
+    display: flex;
+    align-items: center;
 }
-
-.logo{
-    float: left;
-    margin-top: -50px;
-    margin-left: 55px ;
-    height: 170px;
+.logo {
     border-radius: 50%;
+    height: 170px; 
+    margin-left: 50px; 
+    margin-top: 40px;
+    position: relative;
 }
-nav{
-    background-color:#EBEBEB;
-    padding: 1px;
-    margin-left: 140px;
-    text-align: right;
+nav {
+    background-color: #EBEBEB; 
+    width: calc(100% - 200px);
+    margin-left: 200px; 
+    padding: 10px 0; 
 }
-
-a{
-    text-decoration: none;
+nav ul {
+    display: flex;
+    justify-content: flex-end; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; 
 }
-
-ul{
-    margin: 10px;
-}
-
-li{
+.menu {
     font-weight: bold;
-    color: #000;
-    font-size: 18px;
-    display: inline;
-    padding: 0 20px;
-
+    color: black; 
+    font-size: 16px; 
+    padding: 0 10px; 
 }
-li:hover{
+.menu a {
+    color: black; 
+    text-decoration: none; 
+}
+.menu:hover {
     color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: gray;
 }
+.menu:active{
+    color: #3167a4;
+}
+.content{
+    flex: 1;
+    margin: 5px;
+    padding: 5px;
+}
+footer{
+    height: 40px;
+    font-size: 12px;
+    background-color: #EBEBEB;
+    text-align: center;
+    padding: 5px;
+}
 
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+    header {
+        height: 40px;
+    }
+    .logo{
+        border-radius: 50%;
+        height: 90px; 
+        margin-left: 30px; 
+        margin-top:5px;
+    }
+    nav {
+        width: 100%; 
+        margin-left: 0; 
+    }
+    nav ul {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+    }
+    .menu {
+        font-weight: bold;
+        margin: 15px 5px 0 5px;
+        padding: 5px; 
+        font-size: 10px; 
+    }
+}
 
-
+/* Tablet styles */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    header {
+        height: 40px;
+    }
+    nav {
+        width: calc(100% - 100px); 
+        margin-left: 100px; 
+    }
+    .menu {
+        font-weight: bold;
+        color: black; 
+        font-size: 12px; 
+        padding: 0 5px; 
+    }
+    .logo{
+        border-radius: 50%;
+        height: 100px; 
+        margin-left: 50px; 
+        margin-top:50px;
+    }
+}
