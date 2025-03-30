@@ -54,7 +54,7 @@ nav ul {
 .content{
     flex: 1;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 footer{
     height: 40px;
