@@ -54,7 +54,7 @@ nav ul {
 .content{
     flex: 1;
     margin: 5px;
-    padding: 10px;
+    padding: 40px;
 }
 footer{
     height: 40px;
@@ -114,4 +114,16 @@ footer{
         margin-left: 50px; 
         margin-top:50px;
     }
+}
+
+.page{
+    color: black;
+}
+
+#search-bar{
+    width: calc(100% - 150px);
+    height: 7%;
+    border-radius: 20cm;
+    background-color: #EBEBEB;
+    margin-right: 3%;
 }
