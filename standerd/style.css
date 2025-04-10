@@ -119,11 +119,3 @@ footer{
 .page{
     color: black;
 }
-
-#search-bar{
-    width: calc(100% - 150px);
-    height: 7%;
-    border-radius: 20cm;
-    background-color: #EBEBEB;
-    margin-right: 3%;
-}
