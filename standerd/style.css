@@ -29,6 +29,7 @@ header {
 
 /* navigation bar*/
 #sidebarMenu {
+    position: absolute; /* Make sure the sidebar can overlay */
     width: calc(100% - 175px);
     transform: translateY(-200px);
     transition: transform 250ms ease-in-out;
@@ -131,7 +132,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 .content{
     flex: 1;
-    margin:10px 20px;
+    margin-top:65px !important ;
+    margin:20px;
     padding: 15px;
 }
 footer{
@@ -160,6 +162,7 @@ footer{
         width: 100%;
         margin-left: 0; /* No margin on the left */
         transform: translateY(-300px);
+        top: 0;
     }
     .sidebarMenuInner{
         display: flex;
@@ -174,7 +177,7 @@ footer{
         font-size: 12px; /* Smaller font size for mobile */
     }
     .content{
-        margin-top:-240px ;
+        margin-top:20px !important;
     }
 }
 
@@ -196,6 +199,7 @@ footer{
         width: 100%; /* Full width on mobile */
         margin-left: 0; /* No margin on the left */
         transform: translateY(-300px);
+        top: 0;
     }
     .sidebarMenuInner{
         display: flex;
@@ -208,33 +212,8 @@ footer{
         margin: 15px 5px 0 5px;
         padding: 5px; /* Adjust padding for mobile */
         font-size: 12px; /* Smaller font size for mobile */
-    }
+    } 
     .content{
-        margin-top:-240px ;
+        margin-top:20px !important;
     }
-}
-
-/* for campus news*/
-.title{
-    display: flex;
-    margin: 20px;
-    justify-content: space-between;
-}
-.post-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#post-news a{
-    color:white;
-    text-decoration: none;
-}
-#post-news{
-    width: 200px;
-    height: 50px;
-    padding: 5px;
-    background-color: #457dbc;
-}
-#post-news:hover{
-    background-color:#3167a4;
 }
