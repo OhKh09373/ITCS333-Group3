@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0 auto;
+        }
+        .card {
+       width: 85vw;
+         /*padding:15px;*/
+        margin: 0 auto ;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:white;
+        border-radius: 12px; 
+        overflow: hidden; 
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .card-container{
+        padding: 20px;
+        }
+        .card-toolbar
+        {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #457dbc;
+        padding: 12px 16px;
+        width: 100%;
+        margin: 0%;
+        color: white;
+    
+        }
+        .card-toolbar i {
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+        }
+        
+        .card-toolbar i:hover {
+            background-color: rgba(255,255,255,0.15);
+        }
+        .review{
+            background-color: #f9f9f9;
+            padding: 14px;
+            border-radius: 8px;
+            border-left:5px solid #457dbc;
+        }
+        .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        color: #457dbc;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        }
+
+        .back-button:hover {
+        background-color: rgba(69, 125, 188, 0.1);
+        }
+        .comment-area{
+            border-top:2px solid #ccc;
+            border-bottom:2px solid #ccc;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .comment {
+            padding: 14px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left:3px solid #457dbc;
+        }
+        .name{
+            color: #457dbc;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <a href="CourseReview.html" class="back-button">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Reviews
+    </a>
+    <div class="card">
+        <div class="card-toolbar">
+            Course Review
+               <div>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-trash"></i>
+                </div>
+        </div>
+        <div class="card-container">
+        <h3 >ITCS333</h3>
+        <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
+        <p><strong>Rating:</strong> 5 / 5</p>
+        <p><strong>Grade:</strong> A</p>
+
+        <div class="review">
+            <p>
+            <strong>Review:</strong><br>
+            The course was very useful. I learned how to build websites using HTML, 
+            CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
+            The project helped us apply everything we learned. The doctor explained
+            topics clearly and gave helpful feedback.
+            </p>
+        </div>  
+        
+        <h4>Comments(2)</h4>
+        <div class="comment-area">
+            <div class="comment">
+                <div class="name">
+                    <strong>Zain Jaafar</strong>
+                </div>
+                <div class="text">
+                    Honestly, this course set a strong base for me too.
+                </div>
+            </div>
+            <div class="comment">
+                <div class="name">
+                    <strong>Maram Adel</strong>
+                </div>
+                <div class="text">
+                    Totally agree, the project helped a lot.
+                </div>
+            </div>
+        </div>
+        <div class="add-comment">
+            <textarea placeholder="add your comment"></textarea>
+            <button type="submit">Add Comment</button>
+        </div>  
+    </div>
+</body>
+
+</html>
