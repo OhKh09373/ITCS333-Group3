@@ -216,6 +216,7 @@ footer{
     .content{
         margin-top:20px !important;
     }
+}
 #search-bar{
     width: calc(100% - 210px);
     height: 7%;
