@@ -53,40 +53,61 @@
 </header>
 
 <main class="container">
-  <section>
-    <form class="grid">
-      <input type="search" placeholder="Search notes...">
-      <select>
-        <option>Filter by Course</option>
-        <option>ITCS333</option>
-        <option>ITCS316</option>
-      </select>
-      <select>
-        <option>Sort by</option>
-        <option>Newest</option>
-        <option>Oldest</option>
-      </select>
-    </form>
-  </section>
-
-  <section class="grid" style="margin-top: 2rem;">
-    <article>
-      <header><h2>Internet Software Development  - Week 1</h2></header>
-    </article>
-
-    <article>
-      <header><h2>Human-Computer Inter action - Week 1</h2></header>
+    <header class="container">
+        <h1>Course Notes</h1>
+        <nav>
+          <a href="Notes.html">← Back to Listing</a>
+          <a href="#create-note">+ Add New Note</a>
+        </nav>
+      </header>
     
-    </article>
-  </section>
-
-  <nav aria-label="Pagination">
-    <ul class="pagination">
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">Next</a></li>
-    </ul>
-  </nav>
+      <main class="container">
+    
+        <!-- CREATE NOTE SECTION -->
+        <section id="create-note">
+          <h2>Add a New Note</h2>
+          <form>
+            <label for="course">
+              Course Name
+              <input type="text" id="course" name="course" placeholder="e.g. ITCS333" required />
+            </label>
+    
+            <label for="title">
+              Note Title
+              <input type="text" id="title" name="title" placeholder="e.g. Internet Software Development - Week 1" required />
+            </label>
+    
+            <label for="note">
+              Note Summary
+              <textarea id="note" name="note" placeholder="Write your note..." required></textarea>
+            </label>
+    
+            <footer class="grid">
+              <button type="submit">Save Note</button>
+              <a href="#create-note" role="button" class="secondary">Cancel</a>
+            </footer>
+          </form>
+        </section>
+    
+        <hr/>
+    
+        <!-- NOTE DETAIL SECTION -->
+        <section id="note-detail">
+          <h2>Internet Software Development - Week 1</h2>
+          <p><strong>Course:</strong> CY333</p>
+          <p><strong>Note:</strong></p>
+          <p>This week's lecture covered chapter 3 & 4.</p>
+    
+          <nav style="margin-top: 1rem;">
+            <a href="#create-note" role="button">Edit</a>
+            <button type="button" class="secondary">Delete</button>
+          </nav>
+    
+       
+          </section>
+        </section>
+    
+     
 
 </main>
 <footer>
