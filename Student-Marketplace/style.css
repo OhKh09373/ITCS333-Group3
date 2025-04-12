@@ -217,6 +217,88 @@ footer{
         margin-top:20px !important;
     }
 }
+
+footer{
+    height: 40px;
+    font-size: 12px;
+    background-color: #EBEBEB;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+    header{
+        height: 40px !important;
+    }
+    .logo{
+        border-radius: 50%;
+        height: 90px; 
+        margin-left: 30px; /* Space from the left */
+        margin-top:-30px;
+    }
+    .sidebarIconToggle {
+        top: 12px;
+    }
+    #sidebarMenu {
+        width: 100%;
+        margin-left: 0; /* No margin on the left */
+        transform: translateY(-300px);
+        top: 0;
+    }
+    .sidebarMenuInner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu {
+        font-weight: bold;
+        margin: 15px 5px 0 5px;
+        padding: 5px; /* Adjust padding for mobile */
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+    .content{
+        margin-top:20px !important;
+    }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    header{
+        height: 40px !important;
+    }
+    .logo{
+        border-radius: 50%;
+        height: 90px; /* Adjust logo height */
+        margin-left: 30px; /* Space from the left */
+        margin-top:-30px;
+    }
+    .sidebarIconToggle {
+        top: 12px;
+    }
+    #sidebarMenu {
+        width: 100%; /* Full width on mobile */
+        margin-left: 0; /* No margin on the left */
+        transform: translateY(-300px);
+        top: 0;
+    }
+    .sidebarMenuInner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu {
+        font-weight: bold;
+        margin: 15px 5px 0 5px;
+        padding: 5px; /* Adjust padding for mobile */
+        font-size: 12px; /* Smaller font size for mobile */
+    } 
+    .content{
+        margin-top:20px !important;
+    }
+}
 #search-bar{
     width: calc(100% - 210px);
     height: 7%;
