@@ -235,14 +235,24 @@ main {
     width: 100%;
 }
 
+.page-title {
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    padding-left: 20px; 
+    margin: -10px 40px 40px 0;
+    font-size: 2.5rem;
+}
+
+
 /* Search Section */
 .search-section {
     display: flex;
     gap: 0.5rem;
-    margin: 0 auto 0.5rem;
+    margin: 0 0 0.5rem 0; /* Removed 'auto' to prevent centering */
     max-width: 800px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
     width: 100%; 
     padding: 0 1rem;
 }
@@ -300,6 +310,7 @@ main {
     }
   }
 
+  
 
 /* Filter & Sort Section */
 .filter-sort {
