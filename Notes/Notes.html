@@ -36,15 +36,89 @@
 <div class="title">
   <h1>Course Notes</h1>
 
-</div class="Course">
-  <h2>ITCS333-Internet Software Development</h2>
-  <ul class="notes-list">
-    <li><a href="#">Week 1</a></li>
-    <li><a href="#">Week 2</a></li>
-    <li><a href="#">Week 3</a></li>
-    <li><a href="#">Week 4</a></li>
+<header class="container">
+<h1>Course Notes</h1>
+<nav>
+<a href="create-note.html" role="button">+ Add New Note</a>
+</nav>
+</header>
 
+<main class="container">
+<section>
+<form class="grid">
+<input type="search" placeholder="Search notes...">
+<select>
+<option>Filter by Course</option>
+<option>ITCS333</option>
+<option>ITCS316</option>
+</select>
+<select>
+<option>Sort by</option>
+<option>Newest</option>
+<option>Oldest</option>
+</select>
+</form>
+</section>
+
+<section class="grid" style="margin-top: 2rem;">
+<article>
+<header><h2>Internet Software Development - Week 1</h2></header>
+</article>
+
+<article>
+<header><h2>Human Computer Interaction - Week 1</h2></header>
+</article>
+</section>
+
+<nav aria-label="Pagination">
+<ul class="pagination">
+<li><a href="#">1</a></li>
+<li><a href="#">2</a></li>
+<li><a href="#">Next</a></li>
 </ul>
+</nav>
+
+<section id="create">
+<h2>Add a New Note</h2>
+<form>
+<label for="course">
+Course Name
+<input type="text" id="course" name="course" placeholder="e.g. ITCS333" required />
+</label>
+
+<label for="title">
+Note Title
+<input type="text" id="title" name="title" placeholder="e.g. Internet Software Development - Week 1" required />
+</label>
+
+<label for="summary">
+Note Summary
+<textarea id="summary" name="summary" placeholder="Write a brief summary..." required></textarea>
+</label>
+
+<footer class="grid">
+<button type="submit">Save Note</button>
+<a href="#listing" role="button" class="secondary">Cancel</a>
+</footer>
+</form>
+</section>
+
+<hr>
+
+<section id="detail">
+<h2>Internet Software Development - Week 1</h2>
+<p><strong>Course:</strong> ITCS333</p>
+<p><strong>Summary:</strong></p>
+<nav style="margin-top: 1rem;">
+<a href="#create" role="button">Edit</a>
+<button type="button" class="secondary">Delete</button>
+</nav>
+
+<footer style="margin-top: 2rem;">
+<a href="#listing" role="button">← Back to Listing</a>
+</footer>
+</section>    
+    
 </main>
 <footer>
     <p>&copy2025 Campus Hub</p>
