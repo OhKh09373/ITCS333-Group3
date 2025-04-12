@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Hub - Club Activities</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="#">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1 class="section-title">Club Activities</h1>
+
+
+    <!-- Search + Filters -->
+    <form class="grid">
+      <input type="search" placeholder="Search club activities..." aria-label="Search" />
+      <select>
+        <option>All Categories</option>
+        <option>Academic</option>
+        <option>Sports</option>
+        <option>Social</option>
+      </select>
+      <select>
+        <option>Sort by Date</option>
+        <option>Sort by Club Name</option>
+      </select>
+      <button type="submit" disabled>Search</button> <!-- design-only -->
+    </form>
+
+    <!-- Add Button -->
+    <div style="text-align: right; margin: 1rem 0;">
+      <a href="http://127.0.0.1:5500/standerd/Club%20activities/add-activity.html" class="secondary">+ Add New Activity</a>
+    </div>
+
+    <!-- Activity Grid -->
+    <section class="grid">
+      <article>
+        <h2>Art Club Meetup</h2>
+        <p><strong>Club:</strong> Art Enthusiasts</p>
+        <p><strong>Date:</strong> April 10, 2025</p>
+        <p>Join us for an evening of painting and socializing!</p>
+      </article>
+      <article>
+        <h2>Debate Night</h2>
+        <p><strong>Club:</strong> Debate Society</p>
+        <p><strong>Date:</strong> April 12, 2025</p>
+        <p>Come watch or participate in lively student debates.</p>
+      </article>
+      <!-- Add more article cards here -->
+    </section>
+
+    <!-- Pagination (design only) -->
+    <nav aria-label="Pagination" class="pagination">
+      <ul>
+        <li><a href="#">« Prev</a></li>
+        <li><strong>1</strong></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">Next »</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Campus Hub</p>
+  </footer>
+</body>
+</html>
