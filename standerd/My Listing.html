@@ -33,27 +33,81 @@
   </div>
   
   <div class="content">
-    <p class="page">Market place
-        <button id="listing">Add listing</button>
+    <p id="page">My Listings
+        <a href="My Listing.html"><button id="listing">New listing</button></a>
     </p>
-    <br>
     <details>
         <summary id="filter">
             <input type="text" id="search-bar"> 
-            <a href="#"><button id="search">Search</button></a>
-            
+            <button id="search">Search</button>
             Filter
         </summary>
-        a
+        <div id="filter-contain">
+            <div class="contained">By time of listing <br>
+                <input class="radiofilter"  type="radio">Newest <br>
+                <input class="radiofilter" type="radio">Oldest
+                </div>
+            <div class="contained">By type<br>
+                <input class="radiofilter" type="radio">Electronics <br>
+                <input class="radiofilter" type="radio">Books
+            </div>
+            <div class="contained">By price<br>
+                <input class="radiofilter" type="radio">Cheapest <br>
+                <input class="radiofilter" type="radio">Most expensive
+            </div>
+            <div class="contained">Negotiable<br>
+                <input class="radiofilter" type="radio">Yes <br>
+                <input class="radiofilter" type="radio">No
+            </div>
+            <div class="contained">
+                <button id="search">Clear</button>
+            </div>
+            <div class="contained">
+                <button id="search">Apply</button>
+            </div>
+        </div>
     </details>
-</div>
+    <div class="items">
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price
+        </p>
+    </div>
+    </div>
 
-<div>
-
-</div>
-
-<footer>
+    <footer>
     <p>&copy2025 Campus Hub</p>
-</footer>
+    </footer>
 
 </body>

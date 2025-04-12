@@ -264,9 +264,9 @@ footer{
     color: #000000;
     grid-template-columns: repeat(3, 33%);
     width: 100%;
-    height: 20cm;
+    height: 200%;
     align-self: center;
-    grid-template-rows: repeat(2, 50%);
+    grid-template-rows: repeat(2, 500px);
     text-align: center;
 }
 
@@ -280,5 +280,11 @@ footer{
 }
 
 .itemimage{
-    width: 20%;
+    width: 250px;
+    margin: 5%;
+}
+
+.itemdetails{
+    color: #000000;
+    font-size: large;
 }
