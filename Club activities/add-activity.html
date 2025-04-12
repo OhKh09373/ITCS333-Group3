@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Club Activity</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
+  </header>
+
+  <!-- Sidebar Toggle +  Hamburger Icon -->
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="#">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1 class="section-title">Add Club Activity</h1>
+
+    <form>
+      <label for="title">Activity Title</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="club">Club Name</label>
+      <input type="text" id="club" name="club" required />
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <button type="submit">Add Activity</button>
+      <a href="index.html" class="secondary">Cancel</a>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Campus Hub</p>
+  </footer>
+</body>
+</html>
