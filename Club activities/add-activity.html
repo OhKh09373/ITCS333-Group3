@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Club Activity</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="#">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1 class="section-title">Add New Club Activity</h1>
+
+
+    <form>
+      <label for="clubName">Club Name <span style="color:red">*</span></label>
+      <input type="text" id="clubName" name="clubName" placeholder="e.g., Photography Club" required />
+
+      <label for="activityTitle">Activity Title <span style="color:red">*</span></label>
+      <input type="text" id="activityTitle" name="activityTitle" placeholder="e.g., Sunset Shootout" required />
+
+      <label for="date">Date & Time <span style="color:red">*</span></label>
+      <input type="datetime-local" id="date" name="date" required />
+
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="e.g., Main Quad" />
+
+      <label for="category">Category</label>
+      <select id="category" name="category">
+        <option value="">Select category</option>
+        <option value="Academic">Academic</option>
+        <option value="Sports">Sports</option>
+        <option value="Social">Social</option>
+      </select>
+
+      <label for="description">Description <span style="color:red">*</span></label>
+      <textarea id="description" name="description" rows="4" placeholder="Describe the activity" required></textarea>
+
+      <label for="contact">Contact Email</label>
+      <input type="email" id="contact" name="contact" placeholder="e.g., club@email.com" />
+
+      <!-- Image upload placeholder -->
+      <label for="image">Event Poster (optional)</label>
+      <input type="file" id="image" name="image" accept="image/*" disabled /> <!-- design only -->
+
+      <!-- Buttons -->
+      <div class="grid">
+        <button type="submit" disabled>Add Activity</button> <!-- Disabled since this is design only -->
+        <button type="button" onclick="location.href='index.html';" class="secondary">Cancel</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Campus Hub</p>
+  </footer>
+</body>
+</html>
