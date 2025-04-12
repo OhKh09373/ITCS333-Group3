@@ -9,12 +9,22 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header>
     <a href="index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
   </header>
 
-  <nav>
-    <ul>
+  <!-- Sidebar Toggle + Hamburger Icon -->
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
       <li class="menu"><a href="#">Study Group</a></li>
       <li class="menu"><a href="#">Course Review</a></li>
       <li class="menu"><a href="#">Course Notes</a></li>
@@ -22,11 +32,11 @@
       <li class="menu"><a href="#">Club Activities</a></li>
       <li class="menu"><a href="#">Market Place</a></li>
     </ul>
-  </nav>
+  </div>
 
-  <main class="container">
+  <!-- Main Content -->
+  <main class="content">
     <h1 class="section-title">Club Activities</h1>
-
 
     <!-- Search + Filters -->
     <form class="grid">
@@ -41,12 +51,12 @@
         <option>Sort by Date</option>
         <option>Sort by Club Name</option>
       </select>
-      <button type="submit" disabled>Search</button> <!-- design-only -->
+      <button type="submit" disabled>Search</button>
     </form>
 
     <!-- Add Button -->
     <div style="text-align: right; margin: 1rem 0;">
-      <a href="http://127.0.0.1:5500/Club%20activities/add-activity.html" class="secondary">+ Add New Activity</a>
+      <a href="add-activity.html" class="secondary">+ Add New Activity</a>
     </div>
 
     <!-- Activity Grid -->
@@ -63,10 +73,9 @@
         <p><strong>Date:</strong> April 12, 2025</p>
         <p>Come watch or participate in lively student debates.</p>
       </article>
-      <!-- Add more article cards here -->
     </section>
 
-    <!-- Pagination (design only) -->
+    <!-- Pagination -->
     <nav aria-label="Pagination" class="pagination">
       <ul>
         <li><a href="#">« Prev</a></li>
@@ -78,6 +87,7 @@
     </nav>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Campus Hub</p>
   </footer>
