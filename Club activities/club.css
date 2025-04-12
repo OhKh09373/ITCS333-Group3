@@ -29,7 +29,7 @@ header {
 
 /* navigation bar*/
 #sidebarMenu {
-    position: absolute; /* Make sure the sidebar can overlay */
+    position: absolute; /* Make sure the sidebar can overlay! */
     width: calc(100% - 175px);
     transform: translateY(-200px);
     transition: transform 250ms ease-in-out;
