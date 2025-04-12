@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hub</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+  </header>
+
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="../news/news.html">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
+  </div>
+  
+<main class="content">
+  <div>
+    <p id="page">Market place
+        <a href="My Listing.html"><button id="listing">My listings</button></a>
+    </p>
+    <details>
+        <summary id="filter">
+            <input type="text" id="search-bar"> 
+            <button id="search">Search</button>
+            Filter
+        </summary>
+        <div id="filter-contain">
+            <div class="contained">By time of listing <br>
+                <input class="radiofilter"  type="radio">Newest <br>
+                <input class="radiofilter" type="radio">Oldest
+                </div>
+            <div class="contained">By type<br>
+                <input class="radiofilter" type="radio">Electronics <br>
+                <input class="radiofilter" type="radio">Books
+            </div>
+            <div class="contained">By price<br>
+                <input class="radiofilter" type="radio">Cheapest <br>
+                <input class="radiofilter" type="radio">Most expensive
+            </div>
+            <div class="contained">Negotiable<br>
+                <input class="radiofilter" type="radio">Yes <br>
+                <input class="radiofilter" type="radio">No
+            </div>
+            <div class="contained">
+                <button id="search">Clear</button>
+            </div>
+            <div class="contained">
+                <button id="search">Apply</button>
+            </div>
+        </div>
+    </details>
+    <div class="items">
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price, listed by
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price, listed by
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price, listed by
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price, listed by
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price, listed by
+        </p>
+    </div>
+    <div class="item">
+        <img src="placeholder.png" class="itemimage"> <br>
+        <p class="itemdetails">
+            item name, price, listed by
+        </p>
+    </div>
+    </div>
+
+</main>
+  
+<footer>
+    <p>&copy2025 Campus Hub</p>
+</footer>
+
+</body>
