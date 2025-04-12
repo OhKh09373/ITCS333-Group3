@@ -120,8 +120,15 @@ a{
     transition: 0.3s;
 }
 .pagination a:hover{
-    background-color: #3167a4;
+    background-color: #73a9e7;
     scale: 1.2;
+    font-weight: bold;
+}
+.pagination .active{
+    background-color: #3167a4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     font-weight: bold;
 }
 
