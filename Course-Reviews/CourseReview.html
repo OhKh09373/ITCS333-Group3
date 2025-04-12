@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en"data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hub</title>
+    <link href="CourseReviewStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+  </header>
+
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="CourseReview.html">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="create.html">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
+  </div>
+  
+
+<div class="content"><!-- START OF CONTENT -->
+    <main>
+        <div class="firstflex">
+            <h1>Course Reviews</h1>
+            <div>
+                <a href="#popupwindow">
+                    <button class="button">Add Review</button>
+                </a>
+            </div>   
+        </div>
+        <div class="flex">
+                <div class="searchbar">
+                    <input type="text" placeholder="Search">
+                    
+                </div>
+                <div class="filter">
+                    <select>
+                        <option>Filter</option>
+                        <option>CS courses</option>
+                        <option>SE courses</option>
+                        <option>CC courses</option>
+                        <option>IS cources</option>
+                        <option>CE cources</option>
+                        <option>NE courses</option>
+                    </select>
+                </div>
+                <div class="sort">
+                    <select>
+                        <option>Sort</option>
+                        <option>oldest to newest</option>
+                        <option>newest to oldest</option>
+                        <option>higher rating to lower</option>
+                        <option>lower rating to higher</option>
+                    </select>
+                </div>
+        </div>
+
+        <!-- Popup Review Form -->
+        <section>
+            <div class="popupwindow" id="popupwindow">
+                <div class="windowcontent">
+                    <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                    <h3>ADD REVIEW</h3>
+                    <form>
+                        <div>
+                            <label for="id">Course ID:</label>
+                            <input type="text" id="id" name="cid"placeholder="add your courcs ID" required />
+                        </div>
+
+                        <div>
+                            <label for="doctorname">Doctor Name:</label>
+                            <input type="text" id="doctorname" name="drname" placeholder="add your doctor name" required />
+                        </div>
+
+                        <div>
+                            <label for="rate">Your Rating:</label>
+                            <input type="text" id="rate" name="rating" placeholder="(1 to 5) 5 is the highest" required />
+                        </div>
+
+                        <div>
+                            <label for="grade">Your Grade:</label>
+                            <input type="text" id="grade" placeholder="optional " name="grade" />
+                        </div>
+
+                        <div>
+                            <label for="review">Your Review:</label>
+                            <textarea id="review" name="review"placeholder="add your review" required></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex-content">
+            <div class="card">
+                <div class="card-toolbar">
+                    <div class="toolbar-left">
+                       <a href="ReviewComment.html"><i class="fa-regular fa-comments"></i></a>
+                    </div>  
+                    <div class="toolbar-right">
+                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h3 >ITCS333</h3>
+                    <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
+                    <p><strong>Rating:</strong> 5 / 5</p>
+                    <p><strong>Grade:</strong> A</p>
+                    <div class="review">
+                        <p>
+                        <strong>Review:</strong><br>
+                        The course was very useful. I learned how to build websites using HTML, 
+                        CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
+                        The project helped us apply everything we learned. The doctor explained
+                        topics clearly and gave helpful feedback.
+                        </p>
+                    </div> 
+                </div>  
+            </div>
+            <div class="card">
+                <div class="card-toolbar">
+                    <div class="toolbar-left">
+                       <a href="ReviewComment.html"><i class="fa-regular fa-comments"></i></a>
+                    </div>  
+                    <div class="toolbar-right">
+                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h3 >ITCS333</h3>
+                    <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
+                    <p><strong>Rating:</strong> 5 / 5</p>
+                    <p><strong>Grade:</strong> A</p>
+                    <div class="review">
+                        <p>
+                        <strong>Review:</strong><br>
+                        The course was very useful. I learned how to build websites using HTML, 
+                        CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
+                        The project helped us apply everything we learned. The doctor explained
+                        topics clearly and gave helpful feedback.
+                        </p>
+                    </div> 
+                </div>  
+            </div>
+            <div class="card">
+                <div class="card-toolbar">
+                    <div class="toolbar-left">
+                       <a href="ReviewComment.html"><i class="fa-regular fa-comments"></i></a>
+                    </div>  
+                    <div class="toolbar-right">
+                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h3 >ITCS333</h3>
+                    <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
+                    <p><strong>Rating:</strong> 5 / 5</p>
+                    <p><strong>Grade:</strong> A</p>
+                    <div class="review">
+                        <p>
+                        <strong>Review:</strong><br>
+                        The course was very useful. I learned how to build websites using HTML, 
+                        CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
+                        The project helped us apply everything we learned. The doctor explained
+                        topics clearly and gave helpful feedback.
+                        </p>
+                    </div> 
+                </div>  
+            </div>
+        </div>
+        
+    </main>
+
+</div><!-- END OF CONTENT -->
+<div class="pagination">
+        <a href="#">&laquo;</a><a href="#">1</a><a href="#">&raquo;</a>
+</div>
+<footer>
+    <p>&copy2025 Campus Hub</p>
+</footer>  
+</body>
+</html>
