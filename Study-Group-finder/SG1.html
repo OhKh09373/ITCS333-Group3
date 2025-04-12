@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details | Campus Hub</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+  </header>
+
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li class="menu"><a href="SGF.html">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="create.html">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
+  </div>
+  
+<div class="content">
+    <main>
+
+        <div class="back-to-listing">
+            <a href="SGF.html" class="back-button">← Back to Study Groups</a>
+        </div>
+
+        <div class="group-details-container">
+            <!-- Group Header Section -->
+            <div class="group-header">
+                <div class="group-image-container">
+                    <img id="group-main-image" src="web.jpeg" alt="Web Development Group" class="group-main-image">
+                </div>
+                <div class="group-info">
+                    <h1 id="group-name-display">Web Development</h1>
+                    <div class="course-code-container">
+                        <p class="course-code" id="course-display">CS 333 - Web Development</p>
+                        <p class="group-creation-date">Created: November 23, 2023</p>
+                    </div>
+                   
+                    <div class="group-stats">
+                        <span class="stat"><i class="icon members"></i> <span id="member-count">12</span>/<span id="max-members-display">15</span> members</span>
+                        <span class="stat"><i class="icon meeting"></i> Meets <span id="meeting-frequency">weekly</span></span>
+                        <span class="stat"><i class="icon rating"></i> 2 Comments </span>
+                    </div>
+                    <div class="button-grouping">
+                        <button class="join-button" id="join-button">Join Group</button>
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group Details Section -->
+            <div class="group-content">
+                <div class="group-main">
+                    <section class="group-description-section">
+                        <h2>About This Group</h2>
+                        <p id="group-description-display">This study group focuses on building websites together and cracking both front-end and back-end challenges. We meet weekly to work on projects, review concepts, and prepare for exams. All skill levels are welcome!</p>
+                    </section>
+
+                    <section class="upcoming-meetings">
+                        <h2>Upcoming Meetings</h2>
+                        <div class="meeting-card">
+                            <div class="meeting-date">
+                                <span class="date-day" id="meeting-day">15</span>
+                                <span class="date-month" id="meeting-month">Oct</span>
+                            </div>
+                            <div class="meeting-details">
+                                <h3 id="meeting-time-display">Wednesday, 3:00 PM - 5:00 PM</h3>
+                                <p class="meeting-location" id="meeting-location-display">IT Building, Room 1048</p>
+                                <p class="meeting-agenda">Agenda: React.js components and state management</p>
+                            </div>
+                        </div>
+                    </section>
+
+              
+                </div>
+
+                <div class="group-sidebar">
+                    <section class="group-contact">
+                        <h2>Contact</h2>
+                        <p id="contact-display">Email: webdev-group@campus.edu</p>
+                    </section>
+
+                    <section class="similar-groups">
+                        <h2>Similar Groups</h2>
+                        <div class="similar-group">
+                            <h3>Advanced Web Technologies</h3>
+                            <p>CS 455 - Semantic Web </p>
+                            <button class="view-button">View</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews & Comments Section -->
+        <section class="reviews-section">
+            <h2>Comments</h2>
+            <div class="review-list">
+                <!-- Review 1 -->
+                <div class="review-item">
+                <img src="black.jpg" alt="User" class="review-avatar">
+                <div class="review-content">
+                    <div class="review-header">
+                        <span class="review-author">Sarah Hasan</span>
+                        <span class="review-date">December 24, 2023</span>
+                    </div>
+                    <p class="review-text">
+                        This study group has been incredibly helpful for understanding React concepts. 
+                        The members are supportive and the meetings are well-organized. Highly recommend!
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Review 2 -->
+            <div class="review-item">
+                <img src="black.jpg" alt="User" class="review-avatar">
+                <div class="review-content">
+                    <div class="review-header">
+                        <span class="review-author">Ali Ahmad</span>
+                        <span class="review-date">October 5, 2024</span>
+                    </div>
+                        <p class="review-text">
+                            The weekly meetings keep me accountable and the shared resources are top-notch. 
+                            We've built some great projects together through this group.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Add Review Form -->
+            <div class="add-review">
+                <h3>Add A Comment</h3>
+                    <textarea placeholder="Share your experience with this study group..."></textarea>
+                    <button type="submit" class="submit-review">Submit Review</button>
+                </form>
+            </div>
+        </section> 
+
+    </main>
+
+</div>
+<footer>
+    <p>&copy2025 Campus Hub</p>
+</footer>
+</body>
