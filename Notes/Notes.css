@@ -1,219 +1,217 @@
 body {
-    margin: 0;
-    background-color: #F7F7F7;
-    font-family: sans-serif, Helvetica;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    }
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-    box-shadow: none;
-    background-color: #457dbc;
-    height: 60px!important;
-    z-index: 10;
+  width: 100%;
+  background-color: #457dbc;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-shadow: none;
+  z-index: 10;
+  position: relative;
 }
+
 .logo {
-    border-radius: 50%;
-    height: 170px; 
-    margin-left: 50px; /* Space from the left */
-    margin-top: -50px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-top: -20px;
 }
 
-/* navigation bar*/
 #sidebarMenu {
-    position: absolute; /* Make sure the sidebar can overlay */
-    width: calc(100% - 175px);
-    transform: translateY(-200px);
-    transition: transform 250ms ease-in-out;
-    background: #EBEBEB;
-    margin-left: 175px;
-    top: 60px;
-    z-index: 9;
+  position: absolute;
+  top: 60px;
+  left: 175px;
+  width: calc(100% - 175px);
+  background-color: #ebebeb;
+  transform: translateY(-200px);
+  transition: transform 0.25s ease-in-out;
+  z-index: 9;
 }
-.sidebarMenuInner{
-    display: flex;
-    justify-content: flex-end; /* Align menu to the right */
-    list-style: none;
-    justify-items: auto;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+
+.sidebarMenuInner {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
 }
-.menu{
-    list-style: none;
-    color: black; 
-    font-weight: bold;
-    font-size: 16px;
-    padding: 0 10px;
-    padding: 10px;
-    margin: 5px;
+
+.menu {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
 }
+
 .menu a {
-    color: #000000;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
 }
+
 .menu:hover {
-    color: white;
-    border-radius: 20px;
-    background-color: gray;
-    transition: 0.6s;
+  color: white;
+  background-color: gray;
+  border-radius: 20px;
+  transition: background-color 0.6s;
 }
-input[type="checkbox"]:checked ~ #sidebarMenu {
-    transform: translateY(0);
+
+/* Toggle Menu Icon */
+input[type="checkbox"] {
+  display: none;
 }
-input[type=checkbox] {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    display: none;
-}
+
 .sidebarIconToggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-    height: 30px;
-    width: 30px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+  cursor: pointer;
 }
+
 .spinner {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  transition: all 0.3s;
 }
+
 .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
+  margin-top: 3px;
+  position: relative;
 }
+
 .diagonal.part-1 {
-    position: relative;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    float: left;
+  position: relative;
 }
+
 .diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
+  margin-top: 3px;
+  position: relative;
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    opacity: 0;
+
+/* Toggle Animation */
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateY(0);
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(135deg);
-    margin-top: 8px;
+
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .horizontal {
+  opacity: 0;
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(-135deg);
-    margin-top: -9px;
+
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transform: rotate(135deg);
+  margin-top: 8px;
 }
-.content{
-    flex: 1;
-    margin-top:65px !important ;
-    margin:20px;
-    padding: 15px;
+
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transform: rotate(-135deg);
+  margin-top: -9px;
 }
-footer{
+
+/* Main Content Area */
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 65px;
+}
+
+/* Footer */
+footer {
+  height: 40px;
+  font-size: 12px;
+  background-color: #ebebeb;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Responsive Styling */
+
+/* Mobile */
+@media (max-width: 480px) {
+  header {
     height: 40px;
-    font-size: 12px;
-    background-color: #EBEBEB;
-    text-align: center;
-    padding: 5px;
+  }
+
+  .logo {
+    height: 70px;
+    margin-left: 15px;
+    margin-top: -25px;
+  }
+
+  .sidebarIconToggle {
+    top: 12px;
+  }
+
+  #sidebarMenu {
+    width: 100%;
+    left: 0;
+    top: 40px;
+    transform: translateY(-300px);
+  }
+
+  .sidebarMenuInner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
 }
 
-/* Mobile styles */
-@media only screen and (max-width: 480px) {
-    header{
-        height: 40px !important;
-    }
-    .logo{
-        border-radius: 50%;
-        height: 90px; 
-        margin-left: 30px; /* Space from the left */
-        margin-top:-30px;
-    }
-    .sidebarIconToggle {
-        top: 12px;
-    }
-    #sidebarMenu {
-        width: 100%;
-        margin-left: 0; /* No margin on the left */
-        transform: translateY(-300px);
-        top: 0;
-    }
-    .sidebarMenuInner{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .menu {
-        font-weight: bold;
-        margin: 15px 5px 0 5px;
-        padding: 5px; /* Adjust padding for mobile */
-        font-size: 12px; /* Smaller font size for mobile */
-    }
-    .content{
-        margin-top:20px !important;
-    }
-}
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    height: 50px;
+  }
 
-/* Tablet styles */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    header{
-        height: 40px !important;
-    }
-    .logo{
-        border-radius: 50%;
-        height: 90px; /* Adjust logo height */
-        margin-left: 30px; /* Space from the left */
-        margin-top:-30px;
-    }
-    .sidebarIconToggle {
-        top: 12px;
-    }
-    #sidebarMenu {
-        width: 100%; /* Full width on mobile */
-        margin-left: 0; /* No margin on the left */
-        transform: translateY(-300px);
-        top: 40px;
-    }
-    .sidebarMenuInner{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .menu {
-        font-weight: bold;
-        margin: 15px 5px 0 5px;
-        padding: 5px; /* Adjust padding for mobile */
-        font-size: 12px; /* Smaller font size for mobile */
-    } 
-    .content{
-        margin-top:20px !important;
-    }
+  .logo {
+    height: 80px;
+    margin-left: 20px;
+    margin-top: -30px;
+  }
+
+  .sidebarIconToggle {
+    top: 12px;
+  }
+
+  #sidebarMenu {
+    width: 100%;
+    left: 0;
+    top: 50px;
+    transform: translateY(-300px);
+  }
+
+  .sidebarMenuInner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
 }
