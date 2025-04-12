@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hub</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="news.css" rel="stylesheet">
+    <link href="details.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../standerd/index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+    </header>
+
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+
+    <div id="sidebarMenu">
+        <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
+        <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+        <li class="menu"><a href="#">Course Notes</a></li>
+        <li class="menu"><a href="../news/news.html">Campus News</a></li>
+        <li class="menu"><a href="#">Club Activities</a></li>
+        <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+    </div>
+  
+    <main class="content">
+        <article class="news-card-detail">
+            <div class="news-header">
+                <a href="news.html" class="back-link">← Back to News</a>
+                <p class="news-date">Published on February 20, 2025</p>
+            </div>
+            <h1>UOB Hosts Astronauts for the Launch of 'Al Munther' Satellite</h1>
+            
+            <div class="info">
+                 <figure class="news-image-container">
+                    <img src="new2.jpg" class="news-image" alt="News Image">
+                 </figure>
+                <div class="detail">
+                    <section class="news-description">
+                        <p><strong>Short description</strong></p>
+                        <p>The University of Bahrain is
+                             participating in the Bahrain International Garden Show 2025, during the period 20-23 February, 2025.</p>
+                    </section>
+                    
+                    <section class="news-description">
+                        <p><strong>Category</strong></p>
+                        <p class=" news-category category-enviro category">Environment</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="news-content ">
+                <p><strong>Details</strong></p>
+                <p>The University’s participation this year focused on the concept of plant permanence — the ability of plants to survive and thrive in harsh harsh environmental conditions, such as the amount of irrigation,soil quality, climate changes (heat and wind) and agricultural pests, as these factors affect plant parts such as roots, stems, leaves and fruits.</p>
+                <p>The idea aimed to find solutions to the problems faced by home gardeners in maintaining the sustainability of their plants during the summer and winter in Bahrain, and comes in line with the national plan to reach zero carbon neutrality by the year 2060.</p>
+                    
+
+            <div class="action-buttons">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+        </article>
+    
+        <section class="comments-section">
+            <h2>Comments</h2>
+            
+            <div class="comment">
+                <div class="comment-avatar"></div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <div>
+                            <span class="comment-author">Noor</span>
+                            <span class="comment-timestamp">• 1 hours ago</span>
+                        </div>
+                    </div>
+                    <p>Excited to see what the university presents this year!</p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-avatar"></div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <div>
+                            <span class="comment-author">Fatema</span>
+                            <span class="comment-timestamp">• 5 hours ago</span>
+                        </div>
+                    </div>
+                    <p>So proud to see UOB at the Garden Show! 🌱</p>
+                </div>
+            </div>
+
+           
+
+            <form class="comment-form">
+                <textarea placeholder="Share your thoughts..." required></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+        </section>
+    </main>  
+
+  <footer>
+    <p>&copy2025 Campus Hub</p>
+  </footer>
+</body>
