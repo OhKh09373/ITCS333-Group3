@@ -244,7 +244,7 @@ footer{
         width: 100%;
         margin-left: 0; /* No margin on the left */
         transform: translateY(-300px);
-        top: 0;
+        top: 40px;
     }
     .sidebarMenuInner{
         display: flex;
@@ -281,7 +281,7 @@ footer{
         width: 100%; /* Full width on mobile */
         margin-left: 0; /* No margin on the left */
         transform: translateY(-300px);
-        top: 0;
+        top: 40px;
     }
     .sidebarMenuInner{
         display: flex;
