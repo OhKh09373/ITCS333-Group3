@@ -124,6 +124,13 @@ a{
     scale: 1.2;
     font-weight: bold;
 }
+.pagination .active{
+    background-color: #3167a4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+}
 
 
 /* Mobile styles */
