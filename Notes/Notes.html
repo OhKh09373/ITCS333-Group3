@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hub</title>
+    <link href="Notes.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+  </header>
+
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
+      <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+      <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
+      <li class="menu"><a href="../news/news.html">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+    </ul>
+  </div>
+  
+<main class="content">
+
+<header class="container">
+<h1>Course Notes</h1>
+<nav>
+<a href="create-note.html" role="button">+ Add New Note</a>
+</nav>
+</header>
+
+<main class="container">
+<section>
+<form class="grid">
+<input type="search" placeholder="Search notes...">
+<select>
+<option>Filter by Course</option>
+<option>ITCS333</option>
+<option>ITCS316</option>
+</select>
+<select>
+<option>Sort by</option>
+<option>Newest</option>
+<option>Oldest</option>
+</select>
+</form>
+</section>
+
+<section class="grid" style="margin-top: 2rem;">
+<article>
+<header><h2>Internet Software Development - Week 1</h2></header>
+</article>
+
+<article>
+<header><h2>Human Computer Interaction - Week 1</h2></header>
+</article>
+</section>
+
+<nav aria-label="Pagination">
+<ul class="pagination">
+<li><a href="#">1</a></li>
+<li><a href="#">2</a></li>
+<li><a href="#">Next</a></li>
+</ul>
+</nav>
+
+<section id="create">
+<h2>Add a New Note</h2>
+<form>
+<label for="course">
+Course Name
+<input type="text" id="course" name="course" placeholder="e.g. ITCS333" required />
+</label>
+
+<label for="title">
+Note Title
+<input type="text" id="title" name="title" placeholder="e.g. Internet Software Development - Week 1" required />
+</label>
+
+<label for="summary">
+Note Summary
+<textarea id="summary" name="summary" placeholder="Write a brief summary..." required></textarea>
+</label>
+
+<footer class="grid">
+<button type="submit">Save Note</button>
+<a href="#listing" role="button" class="secondary">Cancel</a>
+</footer>
+</form>
+</section>
+
+<hr>
+
+<section id="detail">
+<h2>Internet Software Development - Week 1</h2>
+<p><strong>Course:</strong> ITCS333</p>
+<p><strong>Summary:</strong></p>
+<nav style="margin-top: 1rem;">
+<a href="#create" role="button">Edit</a>
+<button type="button" class="secondary">Delete</button>
+</nav>
+
+<footer style="margin-top: 2rem;">
+<a href="#listing" role="button">← Back to Listing</a>
+</footer>
+</section>    
+    
+</main>
+<footer>
+    <p>&copy2025 Campus Hub</p>
+</footer>
+</body>
+
+git config --global user.name "Fatemasalmeen210"
+git config --global user.email "Fatimasalmeen210@gmail.com"
