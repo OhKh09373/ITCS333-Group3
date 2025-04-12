@@ -277,11 +277,12 @@ body {
     background-color: #EBEBEB;
     text-align: center;
     padding: 5px;
-  }
-  
-  @media only screen and (max-width: 480px) {
-    header {
-      height: 40px !important;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+    header{
+        height: 40px !important;
     }
   
     .logo {
@@ -295,10 +296,10 @@ body {
     }
   
     #sidebarMenu {
-      width: 100%;
-      left: 0;
-      transform: translateY(-300px);
-      top: 0;
+        width: 100%;
+        margin-left: 0; /* No margin on the left */
+        transform: translateY(-300px);
+        top: 0;
     }
   
     .sidebarMenuInner {
@@ -353,4 +354,4 @@ body {
     .notes-list {
       grid-template-columns: 1fr;
     }
-  }
+}
