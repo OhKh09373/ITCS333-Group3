@@ -307,6 +307,7 @@ footer{
     background-color: #EBEBEB;
     color: darkgrey;
     margin-right: 1%;
+    min-width: 200px;
 }
 
 #search{
@@ -328,12 +329,14 @@ footer{
 #listing{
     border-radius: 10px;
     float: right;
+    
 }
 
 #filter-contain{
     display: flex;
     flex-direction: row;
     flex-basis: 20%;
+    max-width: 100%;
 }
 
 .contained{
