@@ -349,7 +349,7 @@ footer{
     color: #000000;
     grid-template-columns: repeat(3, 33%);
     width: 100%;
-    min-height: 100%;
+    min-height: 200px;
     align-self: center;
     grid-template-rows: repeat(2, 500px);
     text-align: center;
