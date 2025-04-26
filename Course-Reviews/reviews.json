@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "course": "ITCS333",
+      "doctor": "Dr. Ahmed Al-Mansoori",
+      "rating": 5,
+      "grade": "A",
+      "review": "The course was very useful. I learned how to build websites using HTML, CSS, and JavaScript. We also used PHP and MySQL for server-side coding.",
+      "date": "04/25/2025 09:30"
+    },
+    {
+      "id": 2,
+      "course": "ITCS201",
+      "doctor": "Dr. Laila Al-Sabah",
+      "rating": 4,
+      "grade": "B+",
+      "review": "Interesting course that covered data structures. The projects were helpful but challenging. The professor was supportive and explained well.",
+      "date": "04/25/2025 14:00"
+    },
+    {
+      "id": 3,
+      "course": "ITCS404",
+      "doctor": "Dr. Noura Al-Fulan",
+      "rating": 3,
+      "grade": "B",
+      "review": "The course covered networking basics and protocols. Some parts were a bit fast, but overall good. Assignments helped reinforce the concepts.",
+      "date": "04/25/2025 11:30"
+    },
+    {
+        "id": 4,
+        "course": "ITSE305",
+        "doctor": "Dr. Fahad Al-Harbi",
+        "rating": 5,
+        "grade": "A+",
+        "review": "Excellent course on software engineering principles. Loved the team project and agile methodology sessions.",
+        "date": "04/25/2025 16:20"
+      },
+      {
+        "id": 5,
+        "course": "ITNE210",
+        "doctor": "Dr. Huda Al-Qahtani",
+        "rating": 4,
+        "grade": "A-",
+        "review": "Good introduction to networking. Labs were very practical and enjoyable. Needed more real-world examples though.",
+        "date": "04/25/2025 17:45"
+      },
+      {
+        "id": 6,
+        "course": "ITCE101",
+        "doctor": "Dr. Sultan Al-Mutairi",
+        "rating": 3,
+        "grade": "B",
+        "review": "Basic computer engineering concepts. Some lectures were a bit dry but projects were fun and hands-on.",
+        "date": "04/25/2025 10:15"
+      },
+      {
+        "id": 7,
+        "course": "ITIS202",
+        "doctor": "Dr. Maha Al-Omari",
+        "rating": 5,
+        "grade": "A",
+        "review": "Information systems course with lots of practical case studies. Learned a lot about database management systems.",
+        "date": "04/25/2025 13:00"
+      },
+      {
+        "id": 8,
+        "course": "ITCS102",
+        "doctor": "Dr. Sami Al-Shammari",
+        "rating": 2,
+        "grade": "C+",
+        "review": "The content was difficult to follow at times. More examples in lectures would have helped.",
+        "date": "04/25/2025 12:40"
+      },
+      {
+        "id": 9,
+        "course": "ITSE402",
+        "doctor": "Dr. Rawan Al-Dossary",
+        "rating": 4,
+        "grade": "B+",
+        "review": "Advanced software engineering topics were covered. The final project was challenging but rewarding.",
+        "date": "04/25/2025 18:10"
+      },
+      {
+        "id": 10,
+        "course": "ITIS305",
+        "doctor": "Dr. Khalid Al-Saif",
+        "rating": 5,
+        "grade": "A+",
+        "review": "Loved the course on enterprise systems. The ERP simulation was one of the best activities we did.",
+        "date": "04/25/2025 15:00"
+      }
+  ]
+  
