@@ -65,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (searchTerm) {
         filteredCards = filteredCards.filter(card =>
           card.title.toLowerCase().includes(searchTerm) ||
-          card.course.toLowerCase().includes(searchTerm) ||
-          card.description.toLowerCase().includes(searchTerm)
+          card.course.toLowerCase().includes(searchTerm) 
         );
       }
   
