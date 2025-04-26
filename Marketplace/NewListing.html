@@ -31,22 +31,45 @@
         <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
     </ul>
   </div>
-  
+
 <main class="content">
   <div>
     <p id="page">Add an item to the Marketplace</p>
-    <form>
-        Listing title <input type="text">
-        Upload images <input type="image">
-        Type 
-        Set price <input type="number">
-        Discription <input type="text">
-        Negotiable? <input type="checkbox">
+    <form id="marketplaceForm">
+      Listing title<br>
+      <input type="text" id="title" required>
+      <div id="titleError" class="error-message"></div>
+
+      Upload images<br>
+      <input type="file" id="image" accept="image/*" required>
+      <div id="imageError" class="error-message"></div>
+
+      Set price<br>
+      <input type="number" id="price" required>
+      <div id="priceError" class="error-message"></div>
+
+      Description<br>
+      <input type="text" id="description" required>
+      <div id="descriptionError" class="error-message"></div>
+
+      Negotiable?<br>
+      <input type="radio" id="negotiableYes" name="negotiable" value="yes" checked>
+      <label for="negotiableYes">Yes</label>
+
+      <input type="radio" id="negotiableNo" name="negotiable" value="no">
+      <label for="negotiableNo">No</label>
+      <div id="negotiableError" class="error-message"></div>
+
+      <br><br>
+      <button type="submit">Submit Listing</button>
     </form>
+  </div>
 </main>
-  
+
 <footer>
-    <p>&copy2025 Campus Hub</p>
+  <p>&copy;2025 Campus Hub</p>
 </footer>
 
+<script src="Script.js"></script>
 </body>
+</html>

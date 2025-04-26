@@ -1,83 +1,89 @@
 <!DOCTYPE html>
-<html lang="en"data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Hub</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
-</head>
-<body>
+    <html lang="en"data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campus Hub</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+    </head>
+    <body>
 
-  <header>
-    <a href="../index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
-  </header>
+    <header>
+        <a href="../index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+    </header>
 
-  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   
-  <label for="openSidebarMenu" class="sidebarIconToggle">
-    <div class="spinner diagonal part-1"></div>
-    <div class="spinner horizontal"></div>
-    <div class="spinner diagonal part-2"></div>
-  </label>
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
 
-  <div id="sidebarMenu">
-    <ul class="sidebarMenuInner">
-        <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
-        <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
-        <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
-        <li class="menu"><a href="../news/news.html">Campus News</a></li>
-        <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
-        <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
-    </ul>
-  </div>
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
+            <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+            <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
+            <li class="menu"><a href="../news/news.html">Campus News</a></li>
+            <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
+            <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+        </ul>
+    </div>
   
-<main class="content">
-    <p id="page">My Listings
-        <a href="NewListing.html"><button id="listing">New listing</button></a>
-    </p>
-    <details>
-    <div class="items">
-    <div class="item">
-        <img src="placeholder.png" class="itemimage"> <br>
-        <p class="itemdetails">
-            item name, price
-        </p>
-    </div>
-    <div class="item">
-        <img src="placeholder.png" class="itemimage"> <br>
-        <p class="itemdetails">
-            item name, price
-        </p>
-    </div>
-    <div class="item">
-        <img src="placeholder.png" class="itemimage"> <br>
-        <p class="itemdetails">
-            item name, price
-        </p>
-    </div>
-    <div class="item">
-        <img src="placeholder.png" class="itemimage"> <br>
-        <p class="itemdetails">
-            item name, price
-        </p>
-    </div>
-    <div class="item">
-        <img src="placeholder.png" class="itemimage"> <br>
-        <p class="itemdetails">
-            item name, price
-        </p>
-    </div>
-    <div class="item">
-        <img src="placeholder.png" class="itemimage"> <br>
-        <p class="itemdetails">
-            item name, price
-        </p>
-    </div>
-    </div>
-
+    <main class="content">
+        <div id="login-section">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br><br>
+      
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" required><br><br>
+      
+            <button type="submit" class="action-button">Login</button>
+          </form>
+        </div>
+      
+        <div id="listings-section" style="display: none;">
+          <h2>My Listings</h2>
+          <div class="items">
+            <!-- Example item 1 -->
+            <div class="listing-item">
+              <a href="ItemDetails.html" class="item-link">
+                <div class="item">
+                  <img src="placeholder.png" class="itemimage" alt="Item 1">
+                  <p class="itemdetails">Item 1 Name, $100, listed by You</p>
+                </div>
+              </a>
+              <button class="edit-button" onclick="location.href='EditListing.html?item=1'">Edit</button>
+            </div>
+            <!-- Example item 2 -->
+            <div class="listing-item">
+              <a href="ItemDetails.html" class="item-link">
+                <div class="item">
+                  <img src="placeholder.png" class="itemimage" alt="Item 2">
+                  <p class="itemdetails">Item 2 Name, $50, listed by You</p>
+                </div>
+              </a>
+              <button class="edit-button" onclick="location.href='EditListing.html?item=2'">Edit</button>
+            </div>
+            <!-- Continue similar block for items 3 to 6 -->
+            <!-- ... -->
+          </div>
+      
+          <div id="pagination">
+            <button id="prev-page">Prev</button>
+            <span id="page-number">Page 1</span>
+            <button id="next-page">Next</button>
+          </div>
+        </div>
+      </main>
+        
     <footer>
     <p>&copy2025 Campus Hub</p>
     </footer>
-
-</body>
+    <script src="Script.js"></script>
+    </body>
+</html>

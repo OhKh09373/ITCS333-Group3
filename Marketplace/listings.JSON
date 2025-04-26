@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "title": "Old Laptop",
+      "price": 300,
+      "description": "Used but works fine.",
+      "negotiable": true,
+      "image": "placeholder.png"
+    },
+    {
+      "id": 2,
+      "title": "Course Textbook",
+      "price": 50,
+      "description": "Barely used, great condition.",
+      "negotiable": false,
+      "image": "placeholder.png"
+    }
+  ]
+  

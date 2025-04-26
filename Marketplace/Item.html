@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html lang="en"data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campus Hub</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+    <header>
+        <a href="../index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+    </header>
+
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
+            <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+            <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
+            <li class="menu"><a href="../news/news.html">Campus News</a></li>
+            <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
+            <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+        </ul>
+    </div>
+  
+    <main class="content">
+        <div id="item-details-section">
+          <p id="page">Item Details</p>
+          
+          <div class="item">
+            <img src="placeholder.png" class="itemimage">
+            <p class="itemdetails">
+              <strong>Item Name:</strong> Example Item<br>
+              <strong>Price:</strong> $99<br>
+              <strong>Listed By:</strong> John Doe<br>
+              <strong>Description:</strong> A very nice item, slightly used, perfect condition.<br>
+              <strong>Negotiable:</strong> Yes
+            </p>
+          </div>
+      
+          <!-- Comments Section -->
+          <div id="comments-section">
+            <h2>Comments</h2>
+            <div id="comments-list">
+              <!-- Example static comments -->
+              <div class="comment">
+                <p><strong>Jane:</strong> Is this still available?</p>
+              </div>
+              <div class="comment">
+                <p><strong>Mike:</strong> Can you lower the price?</p>
+              </div>
+            </div>
+      
+            <!-- Add new comment -->
+            <form id="commentForm">
+              <label for="commentInput">Leave a comment:</label><br>
+              <textarea id="commentInput" rows="3" required></textarea><br>
+              <button type="submit" class="action-button">Post Comment</button>
+            </form>
+          </div>
+        </div>
+      </main>
+      
+  
+    <footer>
+    <p>&copy2025 Campus Hub</p>
+    </footer>
+    <script src="Script.js"></script>
+    </body>
+</html>

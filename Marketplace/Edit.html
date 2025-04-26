@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en"data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campus Hub</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+    <header>
+        <a href="../index.html"><img class="logo" src="logo.png" alt="Campus Hub Logo"></a>
+    </header>
+
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
+            <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+            <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
+            <li class="menu"><a href="../news/news.html">Campus News</a></li>
+            <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
+            <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+        </ul>
+    </div>
+  
+    <main class="content">
+        <h2>Edit Listing</h2>
+        <form id="editListingForm">
+          <label for="listingTitle">Listing Title:</label><br>
+          <input type="text" id="listingTitle" value="Current Item Title" required><br><br>
+    
+          <label for="listingImage">Upload New Image:</label><br>
+          <input type="file" id="listingImage" accept="image/*"><br><br>
+    
+          <label for="listingPrice">Price:</label><br>
+          <input type="number" id="listingPrice" value="100" required><br><br>
+    
+          <label for="listingDescription">Description:</label><br>
+          <textarea id="listingDescription" rows="4" required>A very nice item...</textarea><br><br>
+    
+          <label for="negotiable">Negotiable:</label><br>
+          <input type="radio" id="negotiableYes" name="negotiable" value="yes" checked>
+          <label for="negotiableYes">Yes</label>
+          <input type="radio" id="negotiableNo" name="negotiable" value="no">
+          <label for="negotiableNo">No</label><br><br>
+    
+          <button type="submit" class="action-button">Save Changes</button>
+        </form>
+      </main>
+  
+    <footer>
+    <p>&copy2025 Campus Hub</p>
+    </footer>
+    <script src="Script.js"></script>
+    </body>
+</html>
