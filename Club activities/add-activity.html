@@ -60,5 +60,23 @@
   <footer>
     <p>&copy; 2025 Campus Hub</p>
   </footer>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const title = document.getElementById("title");
+      const club = document.getElementById("club");
+      const date = document.getElementById("date");
+      const desc = document.getElementById("description");
+    
+      if (!title.value.trim()) return alert("Title is required!");
+      if (!club.value.trim()) return alert("Club name is required!");
+      if (!date.value.trim()) return alert("Date is required!");
+      if (!desc.value.trim()) return alert("Description is required!");
+    
+      alert("Activity validated and ready to be submitted!");
+    });
+    </script>
+    
 </body>
 </html>
