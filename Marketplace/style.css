@@ -368,6 +368,7 @@ footer{
 .itemimage{
     width: 250px;
     margin: 5%;
+    object-fit: fill;
 }
 
 .itemdetails{
