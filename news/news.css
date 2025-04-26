@@ -51,10 +51,34 @@ select {
     border-radius: 20px;
 }
 .category-academic {
-    background-color: #FF6F61; /* Green for Academic Achievement */
+    background-color: #FF6F61; 
 }
-.category-enviro {
-    background-color: #28a745; /* Green for Academic Achievement */
+.category-sports {
+    background-color: #6F61FF; 
+}
+.category-student{
+    background-color: #FF61A6; 
+}
+.category-health {
+    background-color: #6dea78;
+}
+.category-environment {
+    background-color: #f78eee; 
+}
+.category-alumni {
+    background-color: #61A6FF; 
+}
+.category-development {
+    background-color: #18a5c1;
+}
+.category-cultural {
+    background-color: #FF61A6; 
+}
+.category-community {
+    background-color: #ffc061; 
+}
+.category-technology {
+    background-color: #eff300; 
 }
 .news-date{
     font-size: 15px;
