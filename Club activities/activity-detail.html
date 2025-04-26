@@ -1,56 +1,65 @@
 <!DOCTYPE html>
-<html lang="en"data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Activity Details</title>
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet"/>
+  <link href="club.css" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Header -->
   <header>
-    <a href="../index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
+    <a href="club.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
   </header>
 
-  <!-- Sidebar Toggle + Hamburger Icon -->
-  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-  <label for="openSidebarMenu" class="sidebarIconToggle">
-    <div class="spinner diagonal part-1"></div>
-    <div class="spinner horizontal"></div>
-    <div class="spinner diagonal part-2"></div>
-  </label>
-
-  <!-- Sidebar Menu -->
-  <div id="sidebarMenu">
-    <ul class="sidebarMenuInner">
-        <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
-        <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
-        <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
-        <li class="menu"><a href="../news/news.html">Campus News</a></li>
-        <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
-        <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
-    </ul>
-  </div>
-
-  <!-- Main Content -->
   <main class="content">
-    <h1 class="section-title">Activity Details</h1>
-
-    <article>
-      <h2>Art Club Meetup</h2>
-      <p><strong>Club:</strong> Art Enthusiasts</p>
-      <p><strong>Date:</strong> April 10, 2025</p>
-      <p>Join us for an evening of painting, socializing, and creativity at the art studio!</p>
-    </article>
-
-    <a href="index.html" class="secondary">← Back to Activities</a>
+    <section id="activity-detail">
+      <!-- Activity details will be shown here -->
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Campus Hub</p>
   </footer>
+
+  <script>
+    async function loadActivityDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const title = params.get('title');
+      const detailSection = document.getElementById('activity-detail');
+
+      if (!title) {
+        detailSection.innerHTML = "<p>Invalid activity selected.</p>";
+        return;
+      }
+
+      try {
+        const response = await fetch('activities.json'); // Local JSON file!
+        if (!response.ok) {
+          throw new Error("Network error");
+        }
+        const activities = await response.json();
+        const activity = activities.find(act => act.title === decodeURIComponent(title));
+
+        if (!activity) {
+          detailSection.innerHTML = "<p>Activity not found.</p>";
+          return;
+        }
+
+        detailSection.innerHTML = `
+          <h1>${activity.title}</h1>
+          <p><strong>Club:</strong> ${activity.club}</p>
+          <p><strong>Category:</strong> ${activity.category}</p>
+          <p><strong>Date:</strong> ${activity.date}</p>
+          <p>${activity.description}</p>
+          <a href="club.html" class="secondary">← Back to Activities</a>
+        `;
+      } catch (error) {
+        console.error("Error loading activity details:", error);
+        detailSection.innerHTML = "<p style='color:red;'>Failed to load activity details.</p>";
+      }
+    }
+
+    loadActivityDetail();
+  </script>
 </body>
 </html>
