@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "title": "Photography Workshop",
+      "club": "Photography Club",
+      "date": "2025-05-15",
+      "description": "Learn the basics of photography with professionals!",
+      "category": "Academic"
+    },
+    {
+      "id": 2,
+      "title": "Football Tournament",
+      "club": "Sports Club",
+      "date": "2025-05-20",
+      "description": "Join our annual football tournament and win exciting prizes!",
+      "category": "Sports"
+    },
+    {
+      "id": 3,
+      "title": "Cooking Competition",
+      "club": "Culinary Society",
+      "date": "2025-06-01",
+      "description": "Showcase your cooking skills in our fun competition!",
+      "category": "Social"
+    },
+    {
+      "id": 4,
+      "title": "Art Exhibition",
+      "club": "Art Enthusiasts",
+      "date": "2025-06-05",
+      "description": "Explore beautiful artworks from student artists!",
+      "category": "Academic"
+    },
+    {
+      "id": 5,
+      "title": "Basketball Friendly Match",
+      "club": "Sports Club",
+      "date": "2025-06-10",
+      "description": "Friendly match between clubs. All skill levels welcome!",
+      "category": "Sports"
+    },
+    {
+      "id": 6,
+      "title": "Drama Night",
+      "club": "Drama Club",
+      "date": "2025-06-15",
+      "description": "An evening of drama performances and entertainment!",
+      "category": "Social"
+    },
+    {
+        "id": 7,
+        "title": "Art Club Meetup",
+        "club": "Art Enthusiasts",
+        "date": "2025-04-10",
+        "description": "Join us for an evening of painting and socializing!",
+        "category": "Social"
+      },
+      {
+        "id": 8,
+        "title": "Debate Night",
+        "club": "Debate Society",
+        "date": "2025-04-12",
+        "description": "Come watch or participate in lively student debates.",
+        "category": "Academic"
+      },
+      {
+        "id": 9,
+        "title": "Science Fair Prep",
+        "club": "STEM Club",
+        "date": "2025-04-15",
+        "description": "Prep session for our big science fair exhibition.",
+        "category": "Academic"
+      }
+  ]
+  
