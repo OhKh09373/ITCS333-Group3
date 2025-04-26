@@ -46,27 +46,27 @@
         </div>
         <div class="flex">
                 <div class="searchbar">
-                    <input type="search" placeholder="Search in reviews...">
+                    <input type="search" placeholder="Search in reviews..."id="searchInput">
                     
                 </div>
                 <div class="filter">
-                    <select>
-                        <option>Filter by</option>
-                        <option>CS courses</option>
-                        <option>SE courses</option>
-                        <option>CC courses</option>
-                        <option>IS cources</option>
-                        <option>CE cources</option>
-                        <option>NE courses</option>
+                    <select id="departmentFilter">
+                        <option value="">Filter</option>
+                        <option value="ITCS">CS courses</option>
+                        <option value="ITCC">CC courses</option>
+                        <option value="ITSE">SE courses</option>
+                        <option value="ITNE">NE courses</option>
+                        <option value="ITCE">CE courses</option>
+                        <option value="ITIS">IS courses</option>
                     </select>
                 </div>
                 <div class="sort">
-                    <select>
-                        <option>Sort by</option>
-                        <option>oldest to newest</option>
-                        <option>newest to oldest</option>
-                        <option>higher rating to lower</option>
-                        <option>lower rating to higher</option>
+                    <select id="sort-select">
+                        <option value="sort">Sort</option>
+                        <option value="oldest">oldest to newest</option>
+                        <option value="newest">newest to oldest</option>
+                        <option value="highRating">higher rating to lower</option>
+                        <option value="lowRating">lower rating to higher</option>
                     </select>
                 </div>
         </div>
@@ -111,7 +111,7 @@
             </div>
         </section>
 
-        <div class="flex-content">
+        <div class="flex-content" id="review-container">
             <div class="card">
                 <div class="card-toolbar">
                     <div class="toolbar-left">
@@ -138,58 +138,8 @@
                     </div> 
                 </div>  
             </div>
-            <div class="card">
-                <div class="card-toolbar">
-                    <div class="toolbar-left">
-                       <a href="ReviewComment.html"><i class="fa-regular fa-comments"></i></a>
-                    </div>  
-                    <div class="toolbar-right">
-                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="#"><i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-                <div class="card-container">
-                    <h3 >ITCS333</h3>
-                    <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
-                    <p><strong>Rating:</strong> 5 / 5</p>
-                    <p><strong>Grade:</strong> A</p>
-                    <div class="review">
-                        <p>
-                        <strong>Review:</strong><br>
-                        The course was very useful. I learned how to build websites using HTML, 
-                        CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
-                        The project helped us apply everything we learned. The doctor explained
-                        topics clearly and gave helpful feedback.
-                        </p>
-                    </div> 
-                </div>  
-            </div>
-            <div class="card">
-                <div class="card-toolbar">
-                    <div class="toolbar-left">
-                       <a href="ReviewComment.html"><i class="fa-regular fa-comments"></i></a>
-                    </div>  
-                    <div class="toolbar-right">
-                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="#"><i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-                <div class="card-container">
-                    <h3 >ITCS333</h3>
-                    <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
-                    <p><strong>Rating:</strong> 5 / 5</p>
-                    <p><strong>Grade:</strong> A</p>
-                    <div class="review">
-                        <p>
-                        <strong>Review:</strong><br>
-                        The course was very useful. I learned how to build websites using HTML, 
-                        CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
-                        The project helped us apply everything we learned. The doctor explained
-                        topics clearly and gave helpful feedback.
-                        </p>
-                    </div> 
-                </div>  
-            </div>
+            
+            
         </div>
         
     </main>
@@ -201,5 +151,6 @@
 <footer>
     <p>&copy2025 Campus Hub</p>
 </footer>  
+<script src="coursereviews.js"></script>
 </body>
 </html>
