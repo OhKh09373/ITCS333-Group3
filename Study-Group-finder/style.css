@@ -743,7 +743,8 @@ main {
 
 .form-group input[type="text"],
 .form-group input[type="number"],
-.form-group input[type="datetime-local"],
+.form-group input[type="time"],
+.form-group select,
 .form-group textarea {
     width: 100%;
     padding: 8px 12px;
@@ -755,19 +756,36 @@ main {
     color: #000000;
 }
 
-
-/* Special fix for datetime-local placeholder */
-.form-group input[type="datetime-local"]:not(:has(:valid))::-webkit-datetime-edit {
-    color: #999; 
+/* Day and Time Input Styling */
+.day-time-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    background-color: #ffffff;
+    color: #000000;
+    height: 40px;
+    transition: border-color 0.3s ease;
 }
-.form-group input[type="datetime-local"]:valid::-webkit-datetime-edit {
-    color: #000000; 
+
+.day-time-input:focus {
+    outline: none;
+    border-color: #457dbc;
+    box-shadow: 0 0 0 3px rgba(69, 125, 188, 0.1);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+/* Select dropdown arrow styling */
+.day-time-input[type="time"]::-webkit-calendar-picker-indicator,
+.day-time-input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+}
+
+/* Time input placeholder */
+.day-time-input[type="time"]:invalid::-webkit-datetime-edit {
     color: #999;
-    font-weight: 300;
 }
 
 .form-group textarea {
@@ -890,7 +908,8 @@ main {
   
     .form-group input[type="text"],
     .form-group input[type="number"],
-    .form-group input[type="datetime-local"],
+    .form-group input[type="time"],
+    .form-group select,
     .form-group textarea {
       width: 100%;
       padding: 1rem;
@@ -901,13 +920,6 @@ main {
   
     .form-group textarea {
       min-height: 120px;
-    }
-  
-    /* Special mobile-friendly datetime input */
-    input[type="datetime-local"] {
-      appearance: none;
-      min-height: 3rem;
-      line-height: 1.5;
     }
   
     .button-group {
@@ -936,7 +948,6 @@ main {
       margin: 0;
     }
   }
-
 /* index3,index4 and index5 styling*/
 
 .back-to-listing {
