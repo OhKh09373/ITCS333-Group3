@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Club Activity</title>
-  <link href="style.css" rel="stylesheet" />
+  <link href="club.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet" />
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <a href="../index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
+    <a href="club.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
   </header>
 
   <!-- Sidebar Toggle +  Hamburger Icon -->
@@ -25,12 +25,12 @@
   <!-- Sidebar Menu -->
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-        <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
-        <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
-        <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
-        <li class="menu"><a href="../news/news.html">Campus News</a></li>
-        <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
-        <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="#">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
     </ul>
   </div>
 
@@ -52,7 +52,7 @@
       <textarea id="description" name="description" rows="4" required></textarea>
 
       <button type="submit">Add Activity</button>
-      <a href="index.html" class="secondary">Cancel</a>
+      <a href="club.html" class="secondary">Cancel</a>
     </form>
   </main>
 
@@ -60,5 +60,23 @@
   <footer>
     <p>&copy; 2025 Campus Hub</p>
   </footer>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const title = document.getElementById("title");
+      const club = document.getElementById("club");
+      const date = document.getElementById("date");
+      const desc = document.getElementById("description");
+    
+      if (!title.value.trim()) return alert("Title is required!");
+      if (!club.value.trim()) return alert("Club name is required!");
+      if (!date.value.trim()) return alert("Date is required!");
+      if (!desc.value.trim()) return alert("Description is required!");
+    
+      alert("Activity validated and ready to be submitted!");
+    });
+    </script>
+    
 </body>
 </html>

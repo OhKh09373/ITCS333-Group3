@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en"data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campus Hub - Club Activities</title>
-  <link href="club.css" rel="stylesheet" >
+  <link href="club.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Header -->
   <header>
-    <a href="../index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo" /></a>
+    <a href="../index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo"></a>
   </header>
 
-  <!-- Sidebar Toggle + Hamburger Icon -->
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
@@ -22,25 +20,22 @@
     <div class="spinner diagonal part-2"></div>
   </label>
 
-  <!-- Sidebar Menu -->
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-        <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
-        <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
-        <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
-        <li class="menu"><a href="../news/news.html">Campus News</a></li>
-        <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
-        <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
-    </ul>
+      <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
+      <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+      <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
+      <li class="menu"><a href="../news/news.html">Campus News</a></li>
+      <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
+      <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+  </ul>
   </div>
 
-  <!-- Main Content -->
   <main class="content">
     <h1 class="section-title">Club Activities</h1>
 
-    <!-- Search + Filters -->
     <form class="grid">
-      <input type="search" placeholder="Search club activities..." aria-label="Search" />
+      <input type="search" placeholder="Search club activities..." aria-label="Search">
       <select>
         <option>All Categories</option>
         <option>Academic</option>
@@ -51,45 +46,27 @@
         <option>Sort by Date</option>
         <option>Sort by Club Name</option>
       </select>
-      <button type="submit" disabled>Search</button>
+      <button type="submit">Search</button>
     </form>
 
-    <!-- Add Button -->
     <div style="text-align: right; margin: 1rem 0;">
       <a href="add-activity.html" class="secondary">+ Add New Activity</a>
     </div>
 
-    <!-- Activity Grid -->
-    <section class="grid">
-      <article>
-        <h2>Art Club Meetup</h2>
-        <p><strong>Club:</strong> Art Enthusiasts</p>
-        <p><strong>Date:</strong> April 10, 2025</p>
-        <p>Join us for an evening of painting and socializing!</p>
-      </article>
-      <article>
-        <h2>Debate Night</h2>
-        <p><strong>Club:</strong> Debate Society</p>
-        <p><strong>Date:</strong> April 12, 2025</p>
-        <p>Come watch or participate in lively student debates.</p>
-      </article>
+    <!-- Activities will be inserted here -->
+    <section class="activities-grid">
     </section>
 
-    <!-- Pagination -->
     <nav aria-label="Pagination" class="pagination">
-      <ul>
-        <li><a href="#">« Prev</a></li>
-        <li><strong>1</strong></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">Next »</a></li>
-      </ul>
+      <ul></ul>
     </nav>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Campus Hub</p>
   </footer>
+
+  <script src="club.js"></script>
 </body>
 </html>
+
