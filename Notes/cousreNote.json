@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "course": "ITCS333",
+      "title": "Internet Software Development - Week 1",
+      "summary": "Introduction to web technologies",
+      "date": "2025-04-20T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "course": "ITCS316",
+      "title": "Human Computer Interaction - Week 1",
+      "summary": "Usability principles overview",
+      "date": "2025-04-18T12:00:00Z"
+    }
+  ]
