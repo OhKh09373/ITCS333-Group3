@@ -590,38 +590,37 @@ font-size: 0.8rem;
     background-color: #EBEBEB;
     padding: 20px;
     border-radius: 10px;
-  }
+}
   
-  #comments-list .comment {
+#comments-list .comment {
     margin-bottom: 15px;
     padding: 10px;
     background-color: white;
     border-radius: 5px;
-  }
+}
   
-  #commentInput {
+#commentInput {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid lightgray;
-  }
+}
 
-  #item-details-section .itemimage {
-    width: 300px; /* Smaller width */
-    height: auto; /* Keep aspect ratio */
+#item-details-section .itemimage {
+    width: 300px;
+    height: auto; 
     border-radius: 10px;
     margin-bottom: 20px;
-  }
+}
 
-  .listing-item {
+.listing-item {
     position: relative;
     margin-bottom: 20px;
-  }
+}
   
-  /* Style for edit button */
-  .edit-button {
+.edit-button {
     background-color: #FFC107;
     color: #000;
     border: none;
@@ -631,13 +630,13 @@ font-size: 0.8rem;
     cursor: pointer;
     margin-top: 5px;
     transition: background-color 0.3s ease;
-  }
+}
   
-  .edit-button:hover {
+.edit-button:hover {
     background-color: #e0a800;
-  }
+}
   
-  .item-link {
+.item-link {
     text-decoration: none;
     color: inherit;
-  }
+}
