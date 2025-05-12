@@ -363,8 +363,8 @@ footer{
     margin: 10px 0;
 }
 
-.action-button {
-    background-color: #007BFF;
+.action-button, form button{
+    background-color: #457dbc;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -399,7 +399,7 @@ footer{
 }
 
 .filter-button {
-    background-color: #007BFF;
+    background-color: #457dbc;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -483,12 +483,7 @@ form button[type="submit"]:hover {
     background-color: #0056b3;
 }
   
-/* Error message styling */
-.error-message {
-color: red;
-font-size: 0.8rem;
-}
-  
+
  
 /* Tablets */
 @media only screen and (min-width: 600px) {
