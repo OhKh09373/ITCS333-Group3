@@ -37,16 +37,15 @@
           <h2>Login</h2>
           <form id="loginForm">
             <label for="email">username:</label><br>
-            <input type="email" id="email" required><br><br>
+            <input type="text"><br><br>
     
-            <button class="action-button">Login</button>
+            <button class="action-button" id="login">Login</button>
           </form>
         </div>
       
         <div id="listings-section">
           <h2>My Listings</h2>
-          <div class="items">
-            <!-- Example item 1 -->
+          <div class="items"> 
             <div class="listing-item">
               <a href="ItemDetails.html" class="item-link">
                 <div class="item">
@@ -54,9 +53,9 @@
                   <p class="itemdetails">Item 1 Name, $100, listed by You</p>
                 </div>
               </a>
-              <button class="edit-button" onclick="location.href='EditListing.html?item=1'">Edit</button>
+              <button class="edit-button" onclick="location.href='Edit.html?item=1'">Edit</button>
             </div>
-            <!-- Example item 2 -->
+            
             <div class="listing-item">
               <a href="ItemDetails.html" class="item-link">
                 <div class="item">
@@ -64,10 +63,49 @@
                   <p class="itemdetails">Item 2 Name, $50, listed by You</p>
                 </div>
               </a>
-              <button class="edit-button" onclick="location.href='EditListing.html?item=2'">Edit</button>
+              <button class="edit-button" onclick="location.href='Edit.html?item=2'">Edit</button>
             </div>
-            <!-- Continue similar block for items 3 to 6 -->
-            <!-- ... -->
+            
+            <div class="listing-item">
+              <a href="ItemDetails.html" class="item-link">
+                <div class="item">
+                  <img src="placeholder.png" class="itemimage" alt="Item 3">
+                  <p class="itemdetails">Item 1 Name, $100, listed by You</p>
+                </div>
+              </a>
+              <button class="edit-button" onclick="location.href='Edit.html?item=1'">Edit</button>
+            </div>
+            
+            <div class="listing-item">
+              <a href="ItemDetails.html" class="item-link">
+                <div class="item">
+                  <img src="placeholder.png" class="itemimage" alt="Item 4">
+                  <p class="itemdetails">Item 2 Name, $50, listed by You</p>
+                </div>
+              </a>
+              <button class="edit-button" onclick="location.href='Edit.html?item=2'">Edit</button>
+            </div>
+            
+            <div class="listing-item">
+              <a href="ItemDetails.html" class="item-link">
+                <div class="item">
+                  <img src="placeholder.png" class="itemimage" alt="Item 5">
+                  <p class="itemdetails">Item 1 Name, $100, listed by You</p>
+                </div>
+              </a>
+              <button class="edit-button" onclick="location.href='Edit.html?item=1'">Edit</button>
+            </div>
+            
+            <div class="listing-item">
+              <a href="ItemDetails.html" class="item-link">
+                <div class="item">
+                  <img src="placeholder.png" class="itemimage" alt="Item 6">
+                  <p class="itemdetails">Item 2 Name, $50, listed by You</p>
+                </div>
+              </a>
+              <button class="edit-button" onclick="location.href='Edit.html?item=2'">Edit</button>
+            </div>
+            
           </div>
       
           <div id="pagination">

@@ -489,8 +489,7 @@ color: red;
 font-size: 0.8rem;
 }
   
-/* ========== Responsive Design ========== */
-  
+ 
 /* Tablets */
 @media only screen and (min-width: 600px) {
     .items {
@@ -563,4 +562,9 @@ font-size: 0.8rem;
 .item-link {
     text-decoration: none;
     color: inherit;
+}
+
+#listings-section {
+    display: none;
+    flex-direction: column;
 }
