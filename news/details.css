@@ -75,9 +75,13 @@ h1 {
     padding: 5px;
     margin: 0px;
 }
-.category{
+.news-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
+
 .news-content {
     color: rgb(84, 84, 84);
     background: #F7F7F7;

@@ -1,50 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.form');
-    const titleInput = document.getElementById('title');
-    const categorySelect = document.getElementById('category');
-    const shortDescTextarea = document.getElementById('short-desc');
-    const detailsTextarea = document.getElementById('details');
+    const id = new URLSearchParams(window.location.search).get('id');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // prevent form from submitting
-        
-        // Clear previous error styles
-        [titleInput, categorySelect, shortDescTextarea, detailsTextarea].forEach(input => {
-            input.style.borderColor = '#ddd';
-        });
+    // ✅ Load existing news data if in edit mode
+    if (id) {
+        fetch('https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/news.php')
+            .then(res => res.json())
+            .then(data => {
+                const news = data.data.find(item => item.id == id);
+                if (news) {
+                    document.getElementById('title').value = news.title;
+                    document.getElementById('category').value = news.category;
+                    document.getElementById('short-desc').value = news.short_desc || '';
+                    document.getElementById('details').value = news.body;
+                }
+            })
+            .catch(err => console.error('Error loading news:', err));
+    }
 
-        let isValid = true;
+    // ✅ Form submit handler (Add or Update)
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        // Title validation
-        if (titleInput.value.trim() === '') {
-            titleInput.style.borderColor = 'red';
-            isValid = false;
+        const title = document.getElementById('title').value.trim();
+        const category = document.getElementById('category').value.trim();
+        const shortDesc = document.getElementById('short-desc').value.trim();
+        const details = document.getElementById('details').value.trim();
+        const imageFile = document.getElementById('image').files[0];
+
+        // ✅ Validation
+        if (!title || !category || !details || !shortDesc) {
+            alert('Please fill in all required fields.');
+            return;
         }
 
-        // Category validation (make sure user actually picks a category)
-        if (categorySelect.value === 'Select a category') {
-            categorySelect.style.borderColor = 'red';
-            isValid = false;
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('category', category);
+        formData.append('short_desc', shortDesc);
+        formData.append('body', details);
+
+        if (imageFile) {
+            formData.append('image', imageFile);
         }
 
-        // Short description validation
-        if (shortDescTextarea.value.trim() === '') {
-            shortDescTextarea.style.borderColor = 'red';
-            isValid = false;
+        if (id) {
+            formData.append('id', id); // Add id for update
         }
 
-        // Details validation
-        if (detailsTextarea.value.trim() === '') {
-            detailsTextarea.style.borderColor = 'red';
-            isValid = false;
-        }
+        const url = id
+            ? 'https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/updateNews.php'
+            : 'https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/news-upload.php';
 
-        if (isValid) {
-            alert('Form is valid! Ready to submit.');
-       
-        } else {
-            alert('Please fill all required fields correctly.');
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                alert('Error: ' + result.error);
+                return;
+            }
+
+            alert(id ? 'News updated successfully!' : 'News added successfully!');
+            window.location.href = `details1.html?id=${id || result.id}`;
+
+        } catch (error) {
+            console.error(error);
+            alert('Failed to submit news.');
         }
     });
 });
-

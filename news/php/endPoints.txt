@@ -1,0 +1,18 @@
+replit link:  https://replit.com/@fatemaalbasri4/PHP-MySQL
+
+END points:
+1. news.php
+	https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/news.php
+
+	-with limit & offset:
+	https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/news.php?limit=4&offset=0
+
+2. comment.php
+	https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/comment.php?news_id=27
+
+3. deleteNews.php
+	https://b985a6a4-55e3-4045-bab2-a083ed302801-00-urmriyymfbbg.pike.replit.dev/deleteNews.php?id=16
+		example: 
+			{"message":"News deleted successfully"} check id=16
+			{"error":"News not found"} after delete news check id=16
+	
