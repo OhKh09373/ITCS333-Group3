@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"data-theme="light">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Group | Campus Hub</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group | Campus Hub</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -14,7 +14,6 @@
   </header>
 
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-  
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
     <div class="spinner horizontal"></div>
@@ -23,88 +22,83 @@
 
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-        <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
-        <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
-        <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
-        <li class="menu"><a href="../news/news.html">Campus News</a></li>
-        <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
-        <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
+      <li class="menu"><a href="index.html">Study Group</a></li>
+      <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
+      <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
+      <li class="menu"><a href="../news/news.html">Campus News</a></li>
+      <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
+      <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
     </ul>
   </div>
-  
-<div class="content">
+
+  <div class="content">
     <main>
+      <h1 class="page-title">Study Groups</h1>
 
-        <h1 class="page-title">Study Groups</h1>
+      <!-- Search Section -->
+      <div class="search-section">
+        <input type="search" id="search-bar" class="search-bar" placeholder="Search for study groups..." />
+        <button class="search-button">Search</button>
+      </div>
 
-        <!-- Search Section -->
-        <div class="search-section">
-            <input type="search" id="search-bar" class="search-bar" placeholder="Search for study groups..." />
-            <button class="search-button">Search</button>
+      <!-- Filter & Sort Section -->
+      <div class="filter-sort">
+        <select id="filter-select" class="filter-dropdown">
+          <option value="">Filter by:</option>
+          <optgroup label="Information Technology">
+            <option value="ITCS">Computer Science</option>
+            <option value="ITSE">Software Engineering</option>
+            <option value="ITCE">Computer Engineering</option>
+            <option value="ITAI">Artificial Intelligence</option>
+          </optgroup>
+          <optgroup label="Business">
+            <option value="BUSM">Business Management</option>
+            <option value="BUFI">Finance</option>
+            <option value="BUAC">Accounting</option>
+            <option value="BUMK">Marketing</option>
+          </optgroup>
+          <optgroup label="Science">
+            <option value="SCPH">Physics</option>
+            <option value="SCCY">Chemistry</option>
+            <option value="SCBI">Biology</option>
+          </optgroup>
+        </select>
+
+        <select id="sort-select" class="sort-dropdown">
+          <option value="">Sort by:</option>
+          <option value="oldest">Oldest Groups</option>
+          <option value="newest">Newest Groups</option>
+          <option value="a-z">Alphabetical A-Z</option>
+        </select>
+      </div>
+
+      <!-- Add Group Button -->
+      <div class="add-group-section">
+        <button class="add-group-button" onclick="window.location.href='SGCreate.html'">Create a Study Group</button>
+      </div>
+
+      <!-- Study Groups Container -->
+      <section class="study-groups">
+        <h2>Explore Study Groups</h2>
+        <div class="grid-container" id="study-groups-container">
+          <!-- Cards will be dynamically inserted here -->
         </div>
+      </section>
 
-
-        <!-- Filter & Sort Section -->
-        <div class="filter-sort">
-            <select id="filter-select" class="filter-dropdown">
-                <option value="">Filter by:</option>
-                <optgroup label="Information Technology">
-                    <option value="ITCS">Computer Science</option>
-                    <option value="ITSE">Software Engineering</option>
-                    <option value="ITCE">Computer Engineering</option>
-                    <option value="ITAI">Artificial Intelligence</option>
-                </optgroup>
-                <optgroup label="Business">
-                    <option value="BUSM">Business Management</option>
-                    <option value="BUFI">Finance</option>
-                    <option value="BUAC">Accounting</option>
-                    <option value="BUMK">Marketing</option>
-                </optgroup>
-                <optgroup label="Science">
-                    <option value="SCPH">Physics</option>
-                    <option value="SCCY">Chemistry</option>
-                    <option value="SCBI">Biology</option>
-                </optgroup>
-            </select>
-
-            <select id="sort-select" class="sort-dropdown">
-                <option value="">Sort by:</option>
-                <option value="oldest">Oldest Groups</option>
-                <option value="newest">Newest Groups</option>
-                <option value="a-z">Alphapetical A-Z</option>
-            </select>
-        </div>
-
-        <!-- Study Groups Display -->
-        <div class="add-group-section">
-            <button class="add-group-button" onclick="window.location.href='SGCreate.html'"> Create a Study Group </button>
-        </div> 
-       
-        <!-- Study Groups Display -->
-        <section class="study-groups">
-            <h2>Explore Study Groups</h2>
-            <div class="grid-container">
-
-            </div>
-        </section>
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <button class="page-button prev-button">&laquo; </button>
-            <div class="page-numbers">
-                <span class="page-number active">1</span>
-                <span class="page-number">2</span>
-                <span class="page-number">3</span>
-            </div>
-            <button class="page-button next-button"> &raquo;</button>
-        </div>
-
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <button class="page-button prev-button">&laquo;</button>
+        <div class="page-numbers"></div>
+        <button class="page-button next-button">&raquo;</button>
+      </div>
 
     </main>
+  </div>
 
-</div>
-<footer>
-    <p>&copy2025 Campus Hub</p>
-</footer>
-<script src="app.js"></script>
+  <footer>
+    <p>&copy;2025 Campus Hub</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
+</html>
