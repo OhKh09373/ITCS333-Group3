@@ -50,36 +50,17 @@ select {
     padding: 10px;
     border-radius: 20px;
 }
-.category-academic {
-    background-color: #FF6F61; 
-}
-.category-sports {
-    background-color: #6F61FF; 
-}
-.category-student{
-    background-color: #FF61A6; 
-}
-.category-health {
-    background-color: #6dea78;
-}
-.category-environment {
-    background-color: #f78eee; 
-}
-.category-alumni {
-    background-color: #61A6FF; 
-}
-.category-development {
-    background-color: #18a5c1;
-}
-.category-cultural {
-    background-color: #FF61A6; 
-}
-.category-community {
-    background-color: #ffc061; 
-}
-.category-technology {
-    background-color: #eff300; 
-}
+.category-academic-achievement { background-color: #FF6F61; }
+.category-sport { background-color: #6F61FF; }
+.category-student-life { background-color: #FF61A6; }
+.category-health { background-color: #6dea78; }
+.category-environment { background-color: #f78eee; }
+.category-alumni-news { background-color: #61A6FF; }
+.category-campus-development { background-color: #18a5c1; }
+.category-cultural-events { background-color: #FF61A6; }
+.category-community-engagement { background-color: #ffc061; }
+.category-technology { background-color: #eff300; }
+
 .news-date{
     font-size: 15px;
     color: rgb(130, 130, 130);
