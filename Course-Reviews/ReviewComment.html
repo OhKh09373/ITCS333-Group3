@@ -85,7 +85,11 @@
         .name{
             color: #457dbc;
         }
-       
+       .comment-date {
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
 
     </style>
 </head>
@@ -98,51 +102,118 @@
     <div class="card">
         <div class="card-toolbar">
             Course Review
-               <div>
-                <i class="fa-solid fa-pen-to-square"></i>
-                <i class="fa-solid fa-trash"></i>
-                </div>
         </div>
         <div class="card-container">
-        <h3 >ITCS333</h3>
-        <p><strong>Doctor Name:</strong> Dr. Ahmed Al-Mansoori</p>
-        <p><strong>Rating:</strong> 5 / 5</p>
-        <p><strong>Grade:</strong> A</p>
+        <h3 id="course-code">Loading...</h3>
+            <p><strong>Doctor Name:</strong> <span id="doctor-name">Loading...</span></p>
+            <p><strong>Rating:</strong> <span id="rating">Loading...</span></p>
+            <p><strong>Grade:</strong> <span id="grade">Loading...</span></p>
 
-        <div class="review">
-            <p>
-            <strong>Review:</strong><br>
-            The course was very useful. I learned how to build websites using HTML, 
-            CSS, and JavaScript. We also used PHP and MySQL for server-side coding. 
-            The project helped us apply everything we learned. The doctor explained
-            topics clearly and gave helpful feedback.
-            </p>
-        </div>  
-        
-        <h4>Comments(2)</h4>
-        <div class="comment-area">
-            <div class="comment">
-                <div class="name">
-                    <strong>Zain Jaafar</strong>
-                </div>
-                <div class="text">
-                    Honestly, this course set a strong base for me too.
-                </div>
+            <div class="review">
+                <p><strong>Review:</strong><br><span id="review-text">Loading review...</span></p>
             </div>
-            <div class="comment">
-                <div class="name">
-                    <strong>Maram Adel</strong>
-                </div>
-                <div class="text">
-                    Totally agree, the project helped a lot.
-                </div>
+
+            <h4>Comments</h4>
+            <div class="comment-area" id="comments-container">
+                <!-- Comments loaded by JS -->
             </div>
-        </div>
         <div class="add-comment">
-            <textarea placeholder="add your comment"></textarea>
-            <button type="submit">Add Comment</button>
-        </div>  
+                <input type="text" id="commenter-name" placeholder="Your name">
+                <textarea id="new-comment-text" placeholder="Add your comment"></textarea>
+                <button onclick="addComment()">Add Comment</button>
+        </div>
     </div>
-</body>
+<script>
+    const API_BASE = 'https://e7587148-fd48-4c47-a21c-b81d0adbb7df-00-1p0capn7vcl4e.pike.replit.dev/api.php';
 
+    document.addEventListener('DOMContentLoaded', async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const reviewId = urlParams.get('id');
+        
+        if (reviewId) {
+            await loadReview(reviewId);
+            await loadComments(reviewId);
+        }
+    });
+
+    async function loadReview(reviewId) {
+        try {
+            const response = await fetch(`${API_BASE}?id=${reviewId}&action=get_review`);
+            const review = await response.json();
+
+            document.getElementById('course-code').textContent = review.course_code;
+            document.getElementById('doctor-name').textContent = review.doctor_name;
+            document.getElementById('rating').textContent = `${review.rating} / 5`;
+            document.getElementById('grade').textContent = review.grade;
+            document.getElementById('review-text').textContent = review.review_text;
+        } catch (error) {
+            console.error('Error loading review:', error);
+        }
+    }
+
+    async function loadComments(reviewId) {
+        try {
+            const response = await fetch(`${API_BASE}?review_id=${reviewId}&action=get_comments`);
+            const comments = await response.json();
+
+            const container = document.getElementById('comments-container');
+            container.innerHTML = '';
+
+            if (comments.length === 0) {
+                container.innerHTML = '<p>No comments yet</p>';
+                return;
+            }
+
+            comments.forEach(comment => {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                commentDiv.innerHTML = `
+                    <div class="name">
+                    <strong>${comment.user_name}</strong>
+                    <span class="comment-date">${new Date(comment.created_at).toLocaleString()}</span>
+                    </div>
+                    <div class="text">${comment.comment_text}</div>
+                `;
+                container.appendChild(commentDiv);
+            });
+        } catch (error) {
+            console.error('Error loading comments:', error);
+        }
+    }
+
+    async function addComment() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const reviewId = urlParams.get('id');
+        const commentText = document.getElementById('new-comment-text').value;
+        const userName = document.getElementById('commenter-name').value;
+
+        if (!commentText || !userName) {
+            alert('Please enter your name and comment');
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE}?action=add_comment`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    review_id: reviewId,
+                    user_name: userName,
+                    comment_text: commentText
+                })
+            });
+
+            if (response.ok) {
+                document.getElementById('new-comment-text').value = '';
+                await loadComments(reviewId);
+            } else {
+                throw new Error('Failed to add comment');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error occurred while adding comment');
+        }
+    }
+    </script>
+</body>
 </html>
