@@ -346,3 +346,44 @@ footer{
     border-radius: 8px;
     border-left:5px solid #457dbc;
 }
+.review{
+    background-color: #f9f9f9;
+    padding: 14px;
+    border-radius: 8px;
+    border-left:5px solid #457dbc;
+}
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+.spinner1 {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0,0,0,.1);
+            border-radius: 50%;
+            border-top-color: #457dbc;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            color: #457dbc;
+            font-weight: bold;
+        }
+        /* Pagination styles */
+        .pagination a.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .pagination a.active {
+            background-color: #457dbc;
+            color: white;
+        }
