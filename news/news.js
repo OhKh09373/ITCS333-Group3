@@ -1,5 +1,3 @@
-// app.js
-
 // Get DOM elements
 const newsGrid = document.querySelector('.news-grid');
 const searchInput = document.querySelector('.search-bar input');
@@ -18,27 +16,25 @@ async function fetchNews() {
     try {
         showLoading();
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        if (!response.ok) throw new Error('Failed to fetch news.');
+        if (!response.ok) throw new Error('Failed to fetch news!');
 
         const data = await response.json();
 
         // Map data into our structure
-        allNews = data.slice(0, 30).map(item => ({
+        allNews = data.map(item => ({
             id: item.id,
             title: capitalize(item.title),
-            body: item.body,
+            body: item.body.slice(0,100),
             category: getRandomCategory(),
             date: getRandomDate(),
-            imageNumber: getRandomImageNumber()
+            imageUrl: `https://picsum.photos/id/${item.id}/800/400`,
+            details: item.body
         }));
 
         filteredNews = [...allNews];
         renderNews();
-        renderPagination();
     } catch (error) {
         newsGrid.innerHTML = `<p class="error">Error loading news: ${error.message}</p>`;
-    } finally {
-        hideLoading();
     }
 }
 
@@ -47,7 +43,7 @@ function renderNews() {
     newsGrid.innerHTML = '';
 
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const pageItems = filteredNews.slice(startIndex, startIndex + itemsPerPage);
+    const pageItems = filteredNews.slice(startIndex, startIndex + itemsPerPage); //for filter
 
     if (pageItems.length === 0) {
         newsGrid.innerHTML = '<p>No news found.</p>';
@@ -58,61 +54,82 @@ function renderNews() {
         const article = document.createElement('article');
         article.className = 'news-card';
         article.innerHTML = `
-            <img src="${news.imageNumber}.jpg" alt="News Image" class="news-image">
+            <img src="${news.imageUrl}" alt="News Image" class="news-image">
             <div class="news-content">
                 <h3>${news.title}</h3>
                 <p class="news-date">Publish date: <time>${news.date.toDateString()}</time></p>
                 <p class="news-category category-${news.category.toLowerCase()}">${capitalizeCategory(news.category)}</p>
                 <p>
                     ${news.body.slice(0, 100)}...
-                    <span><a href="details1.html?id=${news.id}">Read more</a></span>
+                    <span><a href="details1.html?id=${news.id}
+                    &title=${encodeURIComponent(news.title)}
+                    &category=${encodeURIComponent(news.category)}
+                    &date=${encodeURIComponent(news.date.toISOString())}
+                    &body=${encodeURIComponent(news.body)}
+                    &imageUrl=${encodeURIComponent(news.imageUrl)}
+                    &details=${encodeURIComponent(news.details)}">Read more</a></span>
                 </p>
             </div>
         `;
         newsGrid.appendChild(article);
     });
+
+    updatePagination();
 }
 
-// Render pagination buttons
-function renderPagination() {
-    paginationContainer.innerHTML = '';
-
+// Update pagination links
+function updatePagination() {
     const pageCount = Math.ceil(filteredNews.length / itemsPerPage);
+    const maxVisiblePages = 3; // Maximum number of visible page links
+    paginationContainer.innerHTML = ''; // Clear existing pagination links
 
-    if (pageCount <= 1) return;
-
-    const prevButton = createPageButton('<', currentPage > 1 ? currentPage - 1 : null);
+    // Add "Previous" button
+    const prevButton = document.createElement('a');
+    prevButton.href = '#';
+    prevButton.textContent = '<';
+    prevButton.classList.add('prev');
+    if (currentPage === 1) prevButton.classList.add('disabled');
+    prevButton.onclick = (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            renderNews();
+        }
+    };
     paginationContainer.appendChild(prevButton);
 
-    for (let i = 1; i <= pageCount; i++) {
-        const pageButton = createPageButton(i, i);
-        if (i === currentPage) pageButton.classList.add('active');
-        paginationContainer.appendChild(pageButton);
+    // Calculate visible page range
+    const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    const endPage = Math.min(pageCount, startPage + maxVisiblePages - 1);
+
+    // Add page number links
+    for (let i = startPage; i <= endPage; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.textContent = i;
+        if (i === currentPage) pageLink.classList.add('active');
+        pageLink.onclick = (e) => {
+            e.preventDefault();
+            currentPage = i;
+            renderNews();
+        };
+        paginationContainer.appendChild(pageLink);
     }
 
-    const nextButton = createPageButton('>', currentPage < pageCount ? currentPage + 1 : null);
-    paginationContainer.appendChild(nextButton);
-}
-
-// Create individual page button
-function createPageButton(text, page) {
-    const link = document.createElement('a');
-    link.href = '#';
-    link.textContent = text;
-
-    if (!page) {
-        link.classList.add('disabled');
-        return link;
-    }
-
-    link.addEventListener('click', e => {
+    // Add "Next" button
+    const nextButton = document.createElement('a');
+    nextButton.href = '#';
+    nextButton.textContent = '>';
+    nextButton.classList.add('next');
+    if (currentPage === pageCount) nextButton.classList.add('disabled');
+    nextButton.onclick = (e) => {
         e.preventDefault();
-        currentPage = page;
-        renderNews();
-        renderPagination();
-    });
-
-    return link;
+        if (currentPage < pageCount) {
+            currentPage++;
+            renderNews();
+        }
+    };
+    paginationContainer.appendChild(nextButton);
 }
 
 // Event listeners
@@ -144,17 +161,11 @@ function handleSearchFilterSort() {
 
     currentPage = 1;
     renderNews();
-    renderPagination();
 }
 
 // Show loading
 function showLoading() {
-    newsGrid.innerHTML = '<p>Loading news...</p>';
-}
-
-// Hide loading
-function hideLoading() {
-    // nothing needed now
+    newsGrid.innerHTML = '<p> Loading news... </p>';
 }
 
 // Utilities
@@ -166,10 +177,6 @@ function getRandomCategory() {
     return categories[Math.floor(Math.random() * categories.length)];
 }
 
-function getRandomImageNumber() {
-    return Math.floor(Math.random() * 6) + 1; // 1 to 6
-}
-
 function getRandomDate() {
     const start = new Date(2023, 0, 1);
     const end = new Date(2025, 3, 1);
@@ -177,7 +184,10 @@ function getRandomDate() {
 }
 
 function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return str
+        .split(' ') // Split the string into an array of words
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+        .join(' '); // Join the words back into a single string
 }
 
 function capitalizeCategory(category) {
@@ -186,3 +196,4 @@ function capitalizeCategory(category) {
 
 // Start fetching news on load
 fetchNews();
+
