@@ -1,136 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.group-form');
-  
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent form submission
-  
-    const errors = [];
-    const groupName = document.getElementById('group-name');
-    const course = document.getElementById('course');
-    const description = document.getElementById('description');
-    const meetingTime = document.getElementById('meeting-time');
-    const location = document.getElementById('location');
-    const maxMembers = document.getElementById('max-members'); 
-    const contact = document.getElementById('contact');
-    const image = document.getElementById('group-image');
-  
-    // Reset previous styles and error messages
-    form.querySelectorAll('input, textarea').forEach(field => {
-      field.classList.remove('invalid');
-      const errorMessage = field.parentNode.querySelector('.error-message');
-      if (errorMessage) {
-        errorMessage.remove();
+  const API_URL = 'https://51d46a5b-bcbc-4de5-8e6d-10e6737ac545-00-2qupdl9b1aqfv.pike.replit.dev/api/study-groups/index.php';
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Get form values
+    const formData = {
+      name: document.querySelector('#group-name').value.trim(),
+      course: document.querySelector('#course').value.trim(),
+      description: document.querySelector('#description').value.trim(),
+      meeting_day: document.querySelector('#meeting-day').value,
+      meeting_time: document.querySelector('#meeting-time').value,
+      location: document.querySelector('#location').value.trim(),
+      max_members: document.querySelector('#max-members').value,
+      contact: document.querySelector('#contact').value.trim(),
+      image_url: await handleImageUpload() // Handle image upload
+    };
+
+    // Validate required fields
+    for (const [key, value] of Object.entries(formData)) {
+      if (!value && key !== 'image_url') {
+        alert(`Please fill in the ${key.replace('_', ' ')} field`);
+        return;
       }
-    });
-  
-    // Group Name
-    if (groupName.value.trim().length < 3) {
-      markInvalid(groupName, 'Group name must be at least 3 characters.');
-      errors.push('Group Name');
     }
-  
-    // Course format: e.g., CS 333 - Internet Software Development
-    const coursePattern = /^[A-Z]{4}\d{3}\s*-\s*.+$/;
-    if (!coursePattern.test(course.value.trim())) {
-      markInvalid(course, 'Course must follow format like "ITCS333 - Course Title".');
-      errors.push('Course');
+
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) throw new Error(result.error || 'Failed to create group');
+
+      alert('Study group created successfully!');
+      window.location.href = `SG1.html?id=${result.group_id}`;
+    } catch (err) {
+      console.error('Creation error:', err);
+      alert(err.message || 'An error occurred while creating the group.');
     }
-  
-    // Description
-    if (description.value.trim().length < 10) {
-      markInvalid(description, 'Description must be at least 10 characters.');
-      errors.push('Description');
-    }
-  
-    // Meeting time
-    if (!meetingTime.value) {
-      markInvalid(meetingTime, 'Meeting time is required.');
-      errors.push('Meeting Time');
-    }
-  
-    // Location
-    if (location.value.trim().length < 3) {
-      markInvalid(location, 'Please enter a valid location.');
-      errors.push('Location');
-    }
-  
-    // Max Members
-    if (!maxMembers.value || parseInt(maxMembers.value) <= 0) {
-      markInvalid(maxMembers, 'Max members must be greater than 0.');
-      errors.push('Max Members');
-    }
-  
-    // Contact Info (email or phone with 8 digits)
-    const contactPattern = /^(\+?\d{10,15})|(\d{8})$/; // For 8 digit phone numbers and optional country code
-    if (!contactPattern.test(contact.value.trim())) {
-      markInvalid(contact, 'Enter a valid 8-digit phone number or email.');
-      errors.push('Contact');
-    }
-  
-    // Group Image
-    if (!image.files || image.files.length === 0) {
-      markInvalid(image, 'Please upload an image.');
-      errors.push('Image');
-    }
-  
-    if (errors.length === 0) {
-      alert('Form is valid! You can now proceed to store or preview this group.');
-    }
-  });
-  
-  function markInvalid(field, message) {
-    field.classList.add('invalid');
-    const errorMessage = field.parentNode.querySelector('.error-message');
-    if (!errorMessage) {
-      const error = document.createElement('small');
-      error.className = 'error-message';
-      error.style.color = 'red';
-      error.textContent = message;
-      field.parentNode.appendChild(error);
-    } else {
-      errorMessage.textContent = message;
-    }
-  }
-  
-  // Dynamic validation when user corrects input
-  const fields = document.querySelectorAll('.group-form input, .group-form textarea');
-  fields.forEach(field => {
-    field.addEventListener('input', function () {
-      const errorMessage = field.parentNode.querySelector('.error-message');
-      if (errorMessage) {
-        const errorField = field.id;
-        // Check if field is corrected
-        if (isValidField(field)) {
-          field.classList.remove('invalid');
-          errorMessage.remove();
-        }
-      }
-    });
   });
 
-  function isValidField(field) {
-    // Check the validity of each field based on the validation logic
-    switch (field.id) {
-      case 'group-name':
-        return field.value.trim().length >= 3;
-      case 'course':
-        const coursePattern = /^[A-Z]{4}\d{3}\s*-\s*.+$/;
-        return coursePattern.test(field.value.trim());
-      case 'description':
-        return field.value.trim().length >= 10;
-      case 'meeting-time':
-        return field.value.trim() !== '';
-      case 'location':
-        return field.value.trim().length >= 3;
-      case 'max-members':
-        return field.value.trim() !== '' && parseInt(field.value) > 0;
-      case 'contact':
-        const contactPattern = /^(\+?\d{10,15})|(\d{8})$/; // Validates 8 digit phone number
-        return contactPattern.test(field.value.trim());
-      case 'group-image':
-        return field.files.length > 0;
-      default:
-        return true;
+  // Handle image upload (resize + convert to base64)
+  async function handleImageUpload() {
+    const imageFile = document.querySelector('#group-image').files[0];
+    if (!imageFile) return null;
+
+    // Check file size (max 1MB)
+    if (imageFile.size > 1000000) {
+      alert('Image is too large (max 1MB)');
+      return null;
     }
+
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          // Resize image to max 800x800px to reduce base64 size
+          const canvas = document.createElement('canvas');
+          const MAX_SIZE = 800;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > MAX_SIZE) {
+              height *= MAX_SIZE / width;
+              width = MAX_SIZE;
+            }
+          } else {
+            if (height > MAX_SIZE) {
+              width *= MAX_SIZE / height;
+              height = MAX_SIZE;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // Convert to JPEG (smaller than PNG)
+          resolve(canvas.toDataURL('image/jpeg', 0.7));
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(imageFile);
+    });
   }
 });
