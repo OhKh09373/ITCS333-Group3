@@ -1,0 +1,37 @@
+-- Enable foreign key checks
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Drop existing tables if needed
+DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS club_activities;
+
+-- Create the table for club activities
+CREATE TABLE club_activities (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  club VARCHAR(255) NOT NULL,
+  date DATE NOT NULL,
+  category VARCHAR(100) NOT NULL,
+  description TEXT NOT NULL
+);
+
+-- Create the table for comments on activities
+CREATE TABLE comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  activity_id INT NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (activity_id) REFERENCES club_activities(id) ON DELETE CASCADE
+);
+
+-- Insert sample data
+INSERT INTO club_activities (title, club, date, category, description) VALUES
+('Math Club Event', 'Math Club', '2025-06-15', 'Academic', 'Join us for an exciting math event with competitions and prizes.'),
+('Football Match', 'Sports Club', '2025-06-20', 'Sports', 'Our team is competing in the annual football match against other universities.'),
+('Community Volunteering', 'Social Club', '2025-06-25', 'Social', 'Help us make a difference by volunteering in the local community.');
+
+-- Sample comments
+INSERT INTO comments (activity_id, author, content) VALUES
+(1, 'John Doe', 'Looking forward to the event!'),
+(2, 'Jane Smith', 'Go team! I hope we win this year.');

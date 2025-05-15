@@ -38,22 +38,25 @@
   <main class="content">
     <h1 class="section-title">Add Club Activity</h1>
 
-    <form>
-      <label for="title">Activity Title</label>
-      <input type="text" id="title" name="title" required />
-
-      <label for="club">Club Name</label>
-      <input type="text" id="club" name="club" required />
-
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" required />
-
-      <label for="description">Description</label>
-      <textarea id="description" name="description" rows="4" required></textarea>
-
-      <button type="submit">Add Activity</button>
+    <form id="addActivityForm">
+      <input type="text" id="title" name="title" placeholder="Title" required>
+      <input type="text" id="club" name="club" placeholder="Club" required>
+      <input type="date" id="date" name="date" required>
+      <select name="category" id="category" required>
+        <option value="">Select category</option>
+        <option value="Academic">Academic</option>
+        <option value="Sports">Sports</option>
+        <option value="Social">Social</option>
+      </select>
+      <textarea name="description" id="description" placeholder="Description" required></textarea>
+    
+      <button type="submit" class="submit-btn">Add Activity</button>
       <a href="club.html" class="secondary">Cancel</a>
     </form>
+    
+  
+    <section class="activities-grid"></section>
+    <nav aria-label="Pagination" class="pagination"><ul></ul></nav>
   </main>
 
   <!-- Footer -->
@@ -62,19 +65,40 @@
   </footer>
 
   <script>
-    document.querySelector("form").addEventListener("submit", function(e) {
+    document.getElementById("addActivityForm").addEventListener("submit", async function(e) {
       e.preventDefault();
-      const title = document.getElementById("title");
-      const club = document.getElementById("club");
-      const date = document.getElementById("date");
-      const desc = document.getElementById("description");
     
-      if (!title.value.trim()) return alert("Title is required!");
-      if (!club.value.trim()) return alert("Club name is required!");
-      if (!date.value.trim()) return alert("Date is required!");
-      if (!desc.value.trim()) return alert("Description is required!");
+      const title = document.getElementById("title").value.trim();
+      const club = document.getElementById("club").value.trim();
+      const date = document.getElementById("date").value;
+      const category = document.getElementById("category").value;
+      const description = document.getElementById("description").value.trim();
     
-      alert("Activity validated and ready to be submitted!");
+      if (!title || !club || !date || !category || !description) {
+        return alert("Please fill in all fields.");
+      }
+    
+      const data = { title, club, date, category, description };
+    
+      try {
+        const res = await fetch("https://146ea1a5-b5cb-45cd-bbc3-cc8077b8a620-00-25mk2jkejvzra.pike.replit.dev/api.php?table=activities",{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+    
+        if (!res.ok) {
+          const errorText = await res.text();
+          throw new Error(`Failed to add activity: ${errorText}`);
+        }
+    
+        alert("Activity added successfully!");
+        window.location.href = "club.html";
+      } catch (err) {
+        alert("Error: " + err.message);
+      }
     });
     </script>
     
