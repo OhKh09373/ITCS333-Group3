@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"data-theme="light">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,6 @@
     </header>
 
     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-  
     <label for="openSidebarMenu" class="sidebarIconToggle">
         <div class="spinner diagonal part-1"></div>
         <div class="spinner horizontal"></div>
@@ -31,33 +30,32 @@
             <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
         </ul>
     </div>
-  
+
     <main class="content">
         <div class="title">
             <h1>Campus News</h1>
             <button id="post-news"><a href="form.html">Post News</a></button>
         </div>
-    
+
         <div class="search-section">
             <div class="search-bar">
                 <input type="search" placeholder="Search campus news" label="Search">
             </div>
             <div class="filter-section">
                 <select label="Filter by category">
-                    <option value="">Filter by </option>
-                    <optgroup label="Category"></optgroup>
-                    <option value="academic">Academic Achievement</option>
-                    <option value="sports">Sports</option>
-                    <option value="student">Student Life</option>
-                    <option value="health">Health</option>
-                    <option value="environment">Environment</option>
-                    <option value="alumni">Alumni News</option>
-                    <option value="development">Campus Development</option>
-                    <option value="cultural">Cultural Events</option>
-                    <option value="community">Community Engagement</option>
-                    <option value="technology">Technology</option>
+                    <option value="">Filter by</option>
+                    <option value="Academic achievement">Academic Achievement</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Student life">Student Life</option>
+                    <option value="Health">Health</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Alumni news">Alumni News</option>
+                    <option value="Campus development">Campus Development</option>
+                    <option value="Cultural events">Cultural Events</option>
+                    <option value="Community engagement">Community Engagement</option>
+                    <option value="Technology">Technology</option>
                 </select>
-      
+
                 <select label="Sort by">
                     <option value="">Sort by</option>
                     <option value="newest">Newest Published</option>
@@ -66,22 +64,20 @@
                 </select>
             </div>
         </div>
-    
-        <div class="news-grid">
 
+        <div class="news-grid">
+            <!-- Dynamic news cards will be njected here js/php -->
         </div>
-    
+
         <div class="pagination">
-            <a href="#" class="prev">&lt;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#" class="next">&gt;</a>
+            <!-- Pagination buttons js/php -->
         </div>
     </main>
 
     <footer>
-        <p>&copy2025 Campus Hub</p>
+        <p>&copy;2025 Campus Hub</p>
     </footer>
-    <script src="app.js"></script>
+
+    <script src="news.js"></script>
 </body>
+</html>

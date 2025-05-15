@@ -13,7 +13,29 @@
 
   <main class="content">
     <section id="activity-detail">
-      <!-- Activity details will be shown here -->
+     
+    </section>
+    <section id="edit-form-section" style="display:none;">
+      
+      <form id="edit-activity-form">
+        <label for="edit-title">Title</label>
+        <input type="text" id="edit-title" name="title" required />
+
+        <label for="edit-club">Club</label>
+        <input type="text" id="edit-club" name="club" required />
+
+        <label for="edit-category">Category</label>
+        <input type="text" id="edit-category" name="category" required />
+
+        <label for="edit-date">Date</label>
+        <input type="date" id="edit-date" name="date" required />
+
+        <label for="edit-description">Description</label>
+        <textarea id="edit-description" name="description" required></textarea>
+
+        <button type="submit">Save Changes</button>
+        <button type="button" onclick="cancelEdit()">Cancel</button>
+      </form>
     </section>
   </main>
 
@@ -33,7 +55,7 @@
       }
 
       try {
-        const response = await fetch('activities.json'); // Local JSON file!
+        const response = await fetch('activities.json'); 
         if (!response.ok) {
           throw new Error("Network error");
         }
@@ -52,11 +74,61 @@
           <p><strong>Date:</strong> ${activity.date}</p>
           <p>${activity.description}</p>
           <a href="club.html" class="secondary">← Back to Activities</a>
+          <button onclick="editActivity(${activity.id})">Edit</button>
         `;
       } catch (error) {
         console.error("Error loading activity details:", error);
         detailSection.innerHTML = "<p style='color:red;'>Failed to load activity details.</p>";
       }
+    }
+
+    function editActivity(activityId) {
+      
+      document.getElementById('activity-detail').style.display = 'none';
+      document.getElementById('edit-form-section').style.display = 'block';
+
+     
+      const activity = activities.find(act => act.id === activityId);
+      
+      
+      document.getElementById('edit-title').value = activity.title;
+      document.getElementById('edit-club').value = activity.club;
+      document.getElementById('edit-category').value = activity.category;
+      document.getElementById('edit-date').value = activity.date;
+      document.getElementById('edit-description').value = activity.description;
+
+      document.getElementById('edit-activity-form').onsubmit = async (event) => {
+        event.preventDefault();
+        const updatedActivity = {
+          title: document.getElementById('edit-title').value,
+          club: document.getElementById('edit-club').value,
+          category: document.getElementById('edit-category').value,
+          date: document.getElementById('edit-date').value,
+          description: document.getElementById('edit-description').value
+        };
+
+        
+        const response = await fetch(`update-activity.php?id=${activityId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedActivity)
+        });
+
+        if (response.ok) {
+          alert("Activity updated successfully");
+          window.location.href = 'club.html'; 
+        } else {
+          alert("Error updating activity");
+        }
+      };
+    }
+
+    function cancelEdit() {
+      
+      document.getElementById('edit-form-section').style.display = 'none';
+      document.getElementById('activity-detail').style.display = 'block';
     }
 
     loadActivityDetail();

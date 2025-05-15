@@ -1,0 +1,40 @@
+https://e7587148-fd48-4c47-a21c-b81d0adbb7df-00-1p0capn7vcl4e.pike.replit.dev/api.php
+
+Endpoint: /api.php
+Methods: POST, PUT, DELETE
+Description: 
+- POST → Add a new review  
+- PUT → Update an existing review  
+- DELETE → Delete a review  
+
+Endpoint: /api.php?action=add_comment
+Method: POST
+Description: Add a comment to a review
+
+Endpoint: /api.php?review_id=12
+Method: GET
+Description: Get all comments for a specific review
+
+Endpoint: /api.php?id=12&action=get_review
+Method: GET
+Description: Get a single review by ID
+
+Endpoint: /api.php?page=1&limit=6&department=CS
+Method: GET
+Description: Get all reviews with pagination and optional department filtering
+
+
+
+
+
+
+
+
+
+
+
+
+Endpoint : /api.php?action=add_comment   POST
+Endpoint : /api.php?review_id=12  GET
+Endpoint : /api.php?id=12&action=get_review   GET
+Endpoint : /api.php?page=1&limit=6&department=CS   GET
