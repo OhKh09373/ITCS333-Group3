@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <a href="../index.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo"></a>
+    <a href="club.html"><img class="logo" src="logo.JPG" alt="Campus Hub Logo"></a>
   </header>
 
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -22,13 +22,13 @@
 
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-      <li class="menu"><a href="../Study-Group-finder/SGF.html">Study Group</a></li>
-      <li class="menu"><a href="../Course-Reviews/CourseReview.html">Course Review</a></li>
-      <li class="menu"><a href="../Notes/Notes.html">Course Notes</a></li>
-      <li class="menu"><a href="../news/news.html">Campus News</a></li>
-      <li class="menu"><a href="../Club activities/club.html">Club Activities</a></li>
-      <li class="menu"><a href="../Marketplace/Market.html">Market Place</a></li>
-  </ul>
+      <li class="menu"><a href="#">Study Group</a></li>
+      <li class="menu"><a href="#">Course Review</a></li>
+      <li class="menu"><a href="#">Course Notes</a></li>
+      <li class="menu"><a href="#">Campus News</a></li>
+      <li class="menu"><a href="#">Club Activities</a></li>
+      <li class="menu"><a href="#">Market Place</a></li>
+    </ul>
   </div>
 
   <main class="content">
@@ -61,6 +61,56 @@
       <ul></ul>
     </nav>
   </main>
+  <!-- Edit Modal -->
+
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Edit Activity</h3>
+      <span class="close-modal">&times;</span>
+    </div>
+    <form id="editActivityForm">
+      <input type="hidden" id="editId" name="id">
+
+
+  <div class="form-group">
+    <label for="editTitle">Title</label>
+    <input type="text" id="editTitle" name="title" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="editClub">Club</label>
+    <input type="text" id="editClub" name="club" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="editDate">Date</label>
+    <input type="date" id="editDate" name="date" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="editCategory">Category</label>
+    <select id="editCategory" name="category" required>
+      <option value="Academic">Academic</option>
+      <option value="Sports">Sports</option>
+      <option value="Social">Social</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="editDescription">Description</label>
+    <textarea id="editDescription" name="description" required></textarea>
+  </div>
+  
+  <div class="form-actions">
+    <button type="submit" class="cancel-btn">Cancel</button>
+    <button type="submit" class="submit-btn">Update Activity</button>
+  </div>
+</form>
+
+
+  </div>
+</div>
 
   <footer>
     <p>&copy; 2025 Campus Hub</p>
@@ -69,4 +119,3 @@
   <script src="club.js"></script>
 </body>
 </html>
-
